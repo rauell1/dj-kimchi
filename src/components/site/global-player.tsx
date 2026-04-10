@@ -30,27 +30,17 @@ function formatTime(sec: number): string {
 }
 
 /**
- * For Mixcloud tracks, resolve the stream URL via our backend API.
- * For HearThis tracks, return the direct MP3 URL immediately.
+ * For tracks with direct audio URLs (e.g. HearThis), return the URL.
  */
 async function resolveStreamUrl(track: {
   audioUrl: string | null;
-  source: string;
-  pageUrl: string;
 }): Promise<string> {
-  if (track.audioUrl) return track.audioUrl; // HearThis — direct URL
+  if (track.audioUrl) return track.audioUrl;
+  throw new Error("No direct audio URL for this source");
+}
 
-  if (track.source === "mixcloud") {
-    const res = await fetch(
-      `/api/mixcloud-url?url=${encodeURIComponent(track.pageUrl)}`,
-    );
-    if (!res.ok) throw new Error("Failed to resolve Mixcloud stream");
-    const data = await res.json();
-    if (!data.streamUrl) throw new Error("No stream URL returned");
-    return data.streamUrl;
-  }
-
-  throw new Error(`Unknown source: ${track.source}`);
+function getMixcloudWidgetUrl(pageUrl: string): string {
+  return `https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=0&autoplay=1&feed=${encodeURIComponent(pageUrl)}`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -189,6 +179,19 @@ function PlayerBar() {
     let cancelled = false;
 
     async function loadAndPlay() {
+      if (currentTrack.source === "mixcloud") {
+        audio.pause();
+        audio.src = "";
+        setCurrentTime(0);
+        setDuration(0);
+        setAudioError(null);
+        setAudioPlaying(false);
+        setIsLoading(false);
+        setResolvedAudioUrl(null);
+        setIsResolving(false);
+        return;
+      }
+
       // Reset state
       audio.pause();
       audio.src = "";
@@ -199,8 +202,8 @@ function PlayerBar() {
       setIsLoading(true);
 
       try {
-        // Resolve the stream URL (instant for HearThis, ~2s for Mixcloud)
-        const streamUrl = await resolveStreamUrl(currentTrack);
+        // Resolve the stream URL for direct-audio sources
+        const streamUrl = await resolveStreamUrl({ audioUrl: currentTrack.audioUrl });
 
         if (cancelled) return;
 
@@ -294,6 +297,65 @@ function PlayerBar() {
   // The play button should show loading when resolving or buffering
   const showLoading = isResolving || isLoading;
   const actuallyPlaying = audioPlaying && !showLoading;
+  const isMixcloudTrack = currentTrack.source === "mixcloud";
+
+  if (isMixcloudTrack) {
+    const mixcloudWidgetSrc = getMixcloudWidgetUrl(currentTrack.pageUrl);
+    return (
+      <>
+        <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 h-14 sm:h-16">
+          <div className="flex items-center gap-3 min-w-0 flex-1">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg overflow-hidden flex-shrink-0 bg-white/5">
+              <img
+                src={currentTrack.cover}
+                alt={currentTrack.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-white truncate leading-tight">
+                {currentTrack.title}
+              </p>
+              <p className="text-[11px] text-white/50 truncate">
+                Mixcloud widget playback
+              </p>
+            </div>
+          </div>
+
+          <a
+            href={currentTrack.pageUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 flex items-center justify-center rounded-full text-white/40 hover:text-white transition-colors"
+            aria-label="Open on Mixcloud"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+
+          <button
+            onClick={stop}
+            className="w-8 h-8 flex items-center justify-center rounded-full text-white/30 hover:text-kenya-red transition-colors"
+            aria-label="Close player"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="px-3 pb-2 sm:px-4 sm:pb-3">
+          <iframe
+            title={`Mixcloud player for ${currentTrack.title}`}
+            src={mixcloudWidgetSrc}
+            width="100%"
+            height="60"
+            loading="lazy"
+            allow="autoplay; encrypted-media"
+            className="w-full rounded-md border border-white/10 bg-black/20"
+          />
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
