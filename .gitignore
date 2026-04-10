@@ -60,3 +60,16 @@ mc_search.json
 __pycache__/
 *.py[cod]
 *.pyo
+
+# Keep sibling repositories and local workspace metadata out of this repo
+/.claude/
+/.cursor/
+/.git.disabled-parent/
+/ai-cv-builder/
+/cv-builder/
+/greenwave-society/
+/openclaude/
+/portfolio/
+/roam-energy-page/
+/safaricharge/
+/safaricharge-website/
