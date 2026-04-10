@@ -3,7 +3,7 @@ import { NAV_LINKS, SOCIAL_LINKS, CONTACT_EMAIL } from "@/lib/site-data";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.05]">
+    <footer className="relative border-t border-border bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 overflow-x-hidden">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Brand */}
@@ -24,14 +24,14 @@ export function Footer() {
               The baddest DJ from East &amp; Central Africa. Afrobeats, Amapiano,
               Gengetone, Dancehall, and Club Bangers straight out of Nairobi.
             </p>
-            <div className="flex items-center gap-1 mt-4 text-sm text-white/40 max-w-full">
+            <div className="flex items-center gap-1 mt-4 text-sm text-foreground/60 max-w-full">
               <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
               <span>Nairobi, Kenya</span>
             </div>
             <div className="flex items-center gap-1.5 mt-2 text-sm max-w-full overflow-hidden">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-white/50 hover:text-kenya-green transition-colors duration-300 break-all"
+                className="text-foreground/70 hover:text-kenya-green transition-colors duration-300 break-all"
               >
                 {CONTACT_EMAIL}
               </a>
@@ -40,7 +40,7 @@ export function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-sm font-bold text-white tracking-wider uppercase mb-4">
+            <h4 className="text-sm font-bold text-foreground tracking-wider uppercase mb-4">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -48,7 +48,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-white transition-colors duration-300"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -59,7 +59,7 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm font-bold text-white tracking-wider uppercase mb-4">
+            <h4 className="text-sm font-bold text-foreground tracking-wider uppercase mb-4">
               Connect
             </h4>
             <div className="flex gap-3">
@@ -69,7 +69,7 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-10 h-10 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-white/40 ${s.color} hover:border-purple-500/30 transition-all duration-300`}
+                  className={`w-10 h-10 rounded-full bg-foreground/5 border border-border flex items-center justify-center text-foreground/60 ${s.color} hover:border-purple-500/30 transition-all duration-300`}
                   aria-label={s.label}
                 >
                   <s.icon className="w-4 h-4" />
@@ -83,7 +83,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} DJ Kimchi. All rights reserved.
           </p>

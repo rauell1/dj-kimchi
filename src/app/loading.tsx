@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center">
       {/* Equalizer bars animation */}
       <div className="flex items-end gap-1.5 h-12 mb-8">
         {[...Array(5)].map((_, i) => (
@@ -12,7 +12,7 @@ export default function Loading() {
           />
         ))}
       </div>
-      <p className="text-white/40 text-sm font-medium tracking-widest uppercase">
+      <p className="text-foreground/50 text-sm font-medium tracking-widest uppercase">
         Loading...
       </p>
     </div>

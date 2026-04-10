@@ -21,8 +21,8 @@ export function HeroSection() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
           style={{ backgroundImage: "url('/images/hero-bg.png')" }}
         />
-        {/* Dark overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-[#050505]" />
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-transparent to-cyan-900/20" />
         {/* Strobe light effect */}
         <div className="absolute inset-0 bg-white strobe-overlay" />
@@ -79,7 +79,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xs sm:text-lg md:text-2xl text-white/70 font-light tracking-wider sm:tracking-widest uppercase mb-2 break-words max-w-full"
+          className="text-xs sm:text-lg md:text-2xl text-foreground/70 font-light tracking-wider sm:tracking-widest uppercase mb-2 break-words max-w-full"
         >
           Afrobeats | Amapiano | Gengetone | Club Bangers
         </motion.p>
@@ -129,7 +129,7 @@ export function HeroSection() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-white/40 hover:text-white transition-all duration-300 social-icon ${s.color}`}
+              className={`text-foreground/40 hover:text-foreground transition-all duration-300 social-icon ${s.color}`}
               aria-label={s.label}
             >
               <s.icon className="w-5 h-5" />
@@ -142,7 +142,7 @@ export function HeroSection() {
       <div className="absolute bottom-8 left-1/2 animate-scroll-bounce z-10">
         <a
           href="#about"
-          className="flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors"
+          className="flex flex-col items-center gap-2 text-foreground/40 hover:text-foreground/70 transition-colors"
         >
           <span className="text-xs tracking-widest uppercase">Scroll</span>
           <ChevronDown className="w-5 h-5" />
