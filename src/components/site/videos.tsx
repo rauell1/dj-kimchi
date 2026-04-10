@@ -62,7 +62,7 @@ export function VideosSection() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory scroll-smooth sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:overflow-visible"
         >
           {MORE_VIDEOS.map((video, i) => (
             <motion.div
@@ -70,7 +70,7 @@ export function VideosSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-              className="group rounded-xl overflow-hidden border border-white/[0.06] bg-[#0a0a0a] video-card-glow"
+              className="group rounded-xl overflow-hidden border border-white/[0.06] bg-[#0a0a0a] video-card-glow min-w-[260px] max-w-[320px] flex-shrink-0 snap-start sm:min-w-0 sm:max-w-none"
             >
               <div className="relative aspect-video" onClick={handleVideoPlay}>
                 <LazyYoutube videoId={video.id} title={video.title} />
