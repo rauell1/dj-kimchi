@@ -1,8 +1,0 @@
-{
-  "git.autoRepositoryDetection": "subFolders",
-  "git.repositoryScanMaxDepth": 4,
-  "git.scanRepositories": [
-    "portfolio",
-    "roam-energy-page"
-  ]
-}
