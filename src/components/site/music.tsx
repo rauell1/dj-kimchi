@@ -119,7 +119,7 @@ export function MusicSection() {
 
         {/* ---- Mixcloud cards ---- */}
         <div className="relative">
-          <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 pr-10 snap-x snap-mandatory scroll-smooth sm:mx-0 sm:px-0 sm:pr-0 sm:grid md:grid-cols-3 sm:gap-6 lg:gap-8 sm:overflow-visible">
+          <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 pr-10 snap-x snap-mandatory scroll-smooth sm:mx-0 sm:px-0 sm:pr-0 sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-6 lg:gap-8 sm:overflow-visible">
             {MIXES.map((mix, i) => {
               const track = toAudioTrack(mix, "mixcloud");
               const isActive = currentTrack?.id === track.id && isPlaying;
@@ -130,7 +130,7 @@ export function MusicSection() {
                   initial={{ opacity: 0, y: 40 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-                  className={`group relative rounded-2xl overflow-hidden bg-[#0a0a0a] border transition-all duration-500 mix-card-hover min-w-full flex-shrink-0 snap-center sm:min-w-0 sm:max-w-none sm:snap-start ${isActive ? "border-purple-500/60 shadow-[0_0_24px_rgba(168,85,247,0.15)]" : "border-white/[0.06] hover:border-kenya-red/40"}`}
+                  className={`group relative rounded-2xl overflow-hidden bg-[#0a0a0a] border transition-all duration-500 mix-card-hover w-[82vw] flex-shrink-0 snap-center sm:w-auto sm:max-w-none sm:snap-start ${isActive ? "border-purple-500/60 shadow-[0_0_24px_rgba(168,85,247,0.15)]" : "border-white/[0.06] hover:border-kenya-red/40"}`}
                 >
                   {/* Cover art */}
                   <div className="relative aspect-square overflow-hidden">
@@ -261,7 +261,7 @@ export function MusicSection() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 1.0 + i * 0.1 }}
-                    className={`group relative rounded-2xl overflow-hidden bg-[#0a0a0a] border transition-all duration-500 mix-card-hover min-w-full flex-shrink-0 snap-center sm:min-w-0 sm:max-w-none sm:snap-start ${isActive ? "border-kenya-green/60 shadow-[0_0_24px_rgba(39,174,96,0.15)]" : "border-white/[0.06] hover:border-kenya-green/40"}`}
+                    className={`group relative rounded-2xl overflow-hidden bg-[#0a0a0a] border transition-all duration-500 mix-card-hover w-[82vw] flex-shrink-0 snap-center sm:w-auto sm:max-w-none sm:snap-start ${isActive ? "border-kenya-green/60 shadow-[0_0_24px_rgba(39,174,96,0.15)]" : "border-white/[0.06] hover:border-kenya-green/40"}`}
                   >
                     <div className="relative aspect-square overflow-hidden">
                       <img
