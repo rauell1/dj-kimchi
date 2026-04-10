@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import type { Booking } from "@prisma/client";
+import { db, isDatabaseEnabled } from "@/lib/db";
 import { z } from "zod";
 import { rateLimit } from "@/lib/rate-limit";
 import { getResendClient, isResendConfigured, CONTACT_EMAIL } from "@/lib/resend";
@@ -189,34 +190,63 @@ export async function POST(request: NextRequest) {
 
     const { name, email, eventType, date, message } = result.data;
 
-    // Save to database
-    const booking = await db.booking.create({
-      data: {
-        name,
-        email,
-        eventType,
-        date: new Date(date),
-        message,
-      },
-    });
+    let booking: Booking | null = null;
+    let storageWarning: string | undefined;
+
+    // Save to database when available
+    if (isDatabaseEnabled() && db) {
+      try {
+        booking = await db.booking.create({
+          data: {
+            name,
+            email,
+            eventType,
+            date: new Date(date),
+            message,
+          },
+        });
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        console.error("[booking] Database save failed:", message);
+        storageWarning = "Booking received but storing it failed. The team will still receive your request via email.";
+      }
+    } else {
+      storageWarning =
+        "Booking received but database persistence is not configured (set DATABASE_URL to enable storage).";
+      console.warn("[booking] Database not configured — skipping persistence. Set DATABASE_URL to enable storage.");
+    }
+
+    const emailEnabled = isResendConfigured();
 
     // Send email notification (fire-and-forget — don't block response)
-    if (isResendConfigured()) {
+    if (emailEnabled) {
       sendBookingEmail({ name, email, eventType, date, message });
     } else {
       console.warn("[booking] Resend not configured — email notification skipped. Set RESEND_API_KEY in .env");
     }
 
+    // Ensure at least one delivery channel is available
+    if (!booking && !emailEnabled) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Booking could not be processed because neither storage nor email is configured. Please try again later.",
+        },
+        { status: 500 }
+      );
+    }
+
     // Return immediately
-    const emailWarning = isResendConfigured()
+    const emailWarning = emailEnabled
       ? undefined
       : "Booking saved but email notifications are not configured.";
+    const combinedWarning = [storageWarning, emailWarning].filter(Boolean).join(" ");
 
     return NextResponse.json({
       success: true,
       message: "Booking submitted! DJ Kimchi's team will get back to you soon.",
-      booking,
-      ...(emailWarning && { warning: emailWarning }),
+      ...(booking && { booking }),
+      ...(combinedWarning && { warning: combinedWarning }),
     });
   } catch (error) {
     console.error("[booking] Error:", error instanceof Error ? error.message : error);
