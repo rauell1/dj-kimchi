@@ -1,19 +1,29 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 import { NAV_LINKS } from "@/lib/site-data";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted] = useState(() => typeof window !== "undefined");
+  const { setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  const isDark = useMemo(
+    () => (resolvedTheme ?? "dark") === "dark",
+    [resolvedTheme],
+  );
+
+  const toggleTheme = () => setTheme(isDark ? "light" : "dark");
 
   return (
     <>
@@ -49,12 +59,27 @@ export function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-white transition-colors duration-300 relative group"
+                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400 group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="ml-2 px-3 py-2 flex items-center gap-2 text-sm font-semibold text-foreground rounded-full border border-border/80 bg-background/70 shadow-sm hover:border-purple-400/60 transition-all"
+                aria-label="Toggle theme"
+              >
+                {mounted && isDark ? (
+                  <Sun className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
+                <span className="hidden lg:inline">
+                  {mounted ? (isDark ? "Light mode" : "Dark mode") : "Theme"}
+                </span>
+              </button>
               <a
                 href="#bookings"
                 className="ml-4 px-5 py-2 bg-gradient-to-r from-kenya-red to-purple-600 text-white text-sm font-bold rounded-full btn-glow-red"
@@ -64,13 +89,26 @@ export function Navigation() {
             </div>
 
             {/* Mobile toggle */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-white hover:text-purple-400 transition-colors"
-              aria-label="Toggle menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
+            <div className="md:hidden flex items-center gap-2">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full border border-border/60 bg-background/80 text-foreground hover:border-purple-400/60 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {mounted && isDark ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="p-2 text-foreground hover:text-purple-400 transition-colors"
+                aria-label="Toggle menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -84,17 +122,30 @@ export function Navigation() {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-40 glass md:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-6">
+            <div className="flex flex-col items-center justify-center h-full gap-6 px-4">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-2xl font-bold text-white hover:text-purple-400 transition-colors"
+                  className="text-2xl font-bold text-foreground hover:text-purple-500 transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="flex items-center gap-3 px-6 py-3 rounded-full border border-border/80 bg-background/80 text-foreground font-semibold shadow-sm hover:border-purple-400/60 transition-all"
+                aria-label="Toggle theme"
+              >
+                {mounted && isDark ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+                <span>{mounted ? (isDark ? "Light mode" : "Dark mode") : "Theme"}</span>
+              </button>
               <a
                 href="#bookings"
                 onClick={() => setMobileOpen(false)}
@@ -104,7 +155,7 @@ export function Navigation() {
               </a>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="absolute top-5 right-5 p-2 text-white"
+                className="absolute top-5 right-5 p-2 text-foreground"
                 aria-label="Close menu"
               >
                 <X className="w-6 h-6" />

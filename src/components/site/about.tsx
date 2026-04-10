@@ -37,7 +37,7 @@ export function AboutSection() {
         className="absolute inset-0 bg-cover bg-center opacity-10"
         style={{ backgroundImage: "url('/images/about-bg.png')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/95 to-[#050505]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -53,7 +53,7 @@ export function AboutSection() {
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-2 h-2 rounded-full bg-kenya-red" />
             <span className="w-2 h-2 rounded-full bg-kenya-green" />
-            <span className="text-xs font-semibold tracking-[0.2em] text-white/40 uppercase">Kenyan DJ</span>
+            <span className="text-xs font-semibold tracking-[0.2em] text-foreground/50 uppercase">Kenyan DJ</span>
             <span className="w-2 h-2 rounded-full bg-kenya-red" />
             <span className="w-2 h-2 rounded-full bg-kenya-green" />
           </div>
@@ -70,9 +70,9 @@ export function AboutSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="space-y-5 text-white/80 text-base sm:text-lg leading-relaxed break-words text-justify">
+            <div className="space-y-5 text-foreground/80 text-base sm:text-lg leading-relaxed break-words text-justify">
               <p>
-                <span className="text-white font-bold text-xl">DJ Kimchi</span> is the{" "}
+                <span className="text-foreground font-bold text-xl">DJ Kimchi</span> is the{" "}
                 <span className="text-purple-400 font-semibold">baddest DJ from East &amp; Central Africa</span>. Media DJ, radio host, club resident, setting dancefloors ablaze across Nairobi.
               </p>
               <p>
@@ -86,7 +86,7 @@ export function AboutSection() {
               </p>
               <p>
                 Hosts the weekly{" "}
-                <span className="text-white font-semibold">&quot;VCUT Radio Mix: DJ Kimchi Live&quot;</span>{" "}
+                <span className="text-foreground font-semibold">&quot;VCUT Radio Mix: DJ Kimchi Live&quot;</span>{" "}
                 podcast. Performs at Nairobi&apos;s top clubs &amp; private events across Kenya. Every set is a masterclass in energy.
               </p>
             </div>
@@ -117,7 +117,7 @@ export function AboutSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                  className={`p-6 rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/[0.06] transition-all duration-500 group ${i % 2 === 0 ? "glow-kenya-red ambient-red" : "glow-kenya-green ambient-green"}`}
+                  className={`p-6 rounded-2xl bg-gradient-to-br from-foreground/5 to-background/60 border border-border transition-all duration-500 group ${i % 2 === 0 ? "glow-kenya-red ambient-red" : "glow-kenya-green ambient-green"}`}
                 >
                   <div className={`text-3xl sm:text-4xl font-black mb-1 ${i % 2 === 0 ? "gradient-text" : "gradient-text-gold"}`}>
                     {stat.value}
@@ -136,7 +136,7 @@ export function AboutSection() {
                 return (
                   <div
                     key={feat.text}
-                    className="flex items-start gap-3 text-white/60 text-sm"
+                    className="flex items-start gap-3 text-foreground/60 text-sm"
                   >
                     <IconComp className={`w-4 h-4 mt-0.5 flex-shrink-0 ${feat.color}`} />
                     <span>{feat.text}</span>

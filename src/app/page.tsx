@@ -15,7 +15,7 @@ import { PagePadding } from "@/components/site/page-padding";
 export default function HomePage() {
   return (
     <PagePadding>
-      <main className="min-h-screen bg-[#050505] text-foreground overflow-x-hidden w-full max-w-[100vw]">
+      <main className="min-h-screen bg-background text-foreground overflow-x-hidden w-full max-w-[100vw]">
         <Navigation />
         <ErrorBoundary>
           <HeroSection />

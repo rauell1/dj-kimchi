@@ -24,7 +24,7 @@ export function ProtectedImage({ src, alt, className }: ProtectedImageProps) {
 
   return (
     <div
-      className="relative select-none"
+      className="relative w-full h-full overflow-hidden select-none"
       onContextMenu={handleContextMenu}
       onDragStart={(e) => {
         e.preventDefault();
