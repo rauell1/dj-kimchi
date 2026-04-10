@@ -61,14 +61,14 @@ function hearthisToAudioTrack(ht: (typeof HEARTHIS_TRACKS)[number]): AudioTrack 
 
 function ScrollHint() {
   return (
-    <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#050505] via-[#050505]/70 to-transparent flex items-center justify-end pr-3 sm:hidden">
-      <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+    <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background via-background/70 to-transparent flex items-center justify-end pr-3 sm:hidden">
+      <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/70">
         <span className="sr-only">Scroll for more tracks</span>
         <motion.span
           aria-hidden
           animate={{ x: [0, 6, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/60 backdrop-blur-sm"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-foreground/10 backdrop-blur-sm"
         >
           <ArrowRight className="h-4 w-4" />
         </motion.span>

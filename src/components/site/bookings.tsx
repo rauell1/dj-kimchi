@@ -100,11 +100,11 @@ export function BookingsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-2 space-y-8"
           >
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/5 border border-purple-500/10">
-              <h3 className="text-xl font-bold text-white mb-4">Available For</h3>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/5 border border-border">
+              <h3 className="text-xl font-bold text-foreground mb-4">Available For</h3>
               <ul className="space-y-3">
                 {EVENT_TYPES.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-white/70">
+                  <li key={item} className="flex items-center gap-3 text-foreground/70">
                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0" />
                     <span className="text-sm">{item}</span>
                   </li>
@@ -112,9 +112,9 @@ export function BookingsSection() {
               </ul>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/[0.06]">
-              <h3 className="text-xl font-bold text-white mb-4">Why DJ Kimchi?</h3>
-              <div className="space-y-4 text-sm text-white/60">
+            <div className="p-6 rounded-2xl bg-card border border-border">
+              <h3 className="text-xl font-bold text-foreground mb-4">Why DJ Kimchi?</h3>
+              <div className="space-y-4 text-sm text-foreground/70">
                 <p>
                   Years of experience rocking Nairobi&apos;s top venues. Professionalism, versatility, and unmatched energy at every event.
                 </p>
@@ -127,18 +127,18 @@ export function BookingsSection() {
             <div className="flex items-center gap-3 p-4 rounded-xl bg-amber-500/5 border border-amber-500/10">
               <Calendar className="w-5 h-5 text-amber-400 flex-shrink-0" />
               <div>
-                <p className="text-sm font-medium text-white">Limited Availability</p>
-                <p className="text-xs text-white/50">Book early to secure your date</p>
+                <p className="text-sm font-medium text-foreground">Limited Availability</p>
+                <p className="text-xs text-foreground/60">Book early to secure your date</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3 p-4 rounded-xl bg-purple-500/5 border border-purple-500/10">
               <Send className="w-5 h-5 text-purple-400 flex-shrink-0" />
               <div>
-                <p className="text-sm font-medium text-white">Direct Contact</p>
+                <p className="text-sm font-medium text-foreground">Direct Contact</p>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-xs text-purple-300 hover:text-white transition-colors"
+                  className="text-xs text-purple-300 hover:text-foreground transition-colors"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -155,11 +155,11 @@ export function BookingsSection() {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-6 sm:p-8 rounded-2xl bg-[#0a0a0a] border border-white/[0.06] space-y-5"
+              className="p-6 sm:p-8 rounded-2xl bg-card border border-border space-y-5"
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-white/70 text-sm font-medium">
+                  <Label htmlFor="name" className="text-foreground/80 text-sm font-medium">
                     Full Name *
                   </Label>
                   <Input
@@ -169,11 +169,11 @@ export function BookingsSection() {
                     placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-white/[0.04] border-white/[0.08] text-white placeholder:text-white/20 focus:border-purple-500/50 focus:ring-purple-500/20"
+                    className="w-full bg-background/70 border border-border text-foreground placeholder:text-muted-foreground focus:border-purple-500/50 focus:ring-purple-500/20"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white/70 text-sm font-medium">
+                  <Label htmlFor="email" className="text-foreground/80 text-sm font-medium">
                     Email *
                   </Label>
                   <Input
@@ -183,35 +183,35 @@ export function BookingsSection() {
                     placeholder="you@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-white/[0.04] border-white/[0.08] text-white placeholder:text-white/20 focus:border-purple-500/50 focus:ring-purple-500/20"
+                    className="w-full bg-background/70 border border-border text-foreground placeholder:text-muted-foreground focus:border-purple-500/50 focus:ring-purple-500/20"
                   />
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <Label htmlFor="eventType" className="text-white/70 text-sm font-medium">
+                  <Label htmlFor="eventType" className="text-foreground/80 text-sm font-medium">
                     Event Type *
                   </Label>
                   <Select
                     value={formData.eventType}
                     onValueChange={(val) => setFormData({ ...formData, eventType: val })}
                   >
-                    <SelectTrigger className="w-full bg-white/[0.04] border-white/[0.08] text-white focus:border-purple-500/50">
+                    <SelectTrigger className="w-full bg-background/70 border border-border text-foreground focus:border-purple-500/50">
                       <SelectValue placeholder="Select event type" />
                     </SelectTrigger>
-                    <SelectContent className="bg-[#111] border-white/[0.08]">
-                      <SelectItem value="club-night" className="text-white/80">Club Night</SelectItem>
-                      <SelectItem value="private-party" className="text-white/80">Private Party</SelectItem>
-                      <SelectItem value="festival" className="text-white/80">Festival / Concert</SelectItem>
-                      <SelectItem value="corporate" className="text-white/80">Corporate Event</SelectItem>
-                      <SelectItem value="wedding" className="text-white/80">Wedding</SelectItem>
-                      <SelectItem value="other" className="text-white/80">Other</SelectItem>
+                    <SelectContent className="bg-card border border-border text-foreground">
+                      <SelectItem value="club-night" className="text-foreground/80">Club Night</SelectItem>
+                      <SelectItem value="private-party" className="text-foreground/80">Private Party</SelectItem>
+                      <SelectItem value="festival" className="text-foreground/80">Festival / Concert</SelectItem>
+                      <SelectItem value="corporate" className="text-foreground/80">Corporate Event</SelectItem>
+                      <SelectItem value="wedding" className="text-foreground/80">Wedding</SelectItem>
+                      <SelectItem value="other" className="text-foreground/80">Other</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="date" className="text-white/70 text-sm font-medium">
+                  <Label htmlFor="date" className="text-foreground/80 text-sm font-medium">
                     Event Date *
                   </Label>
                   <Input
@@ -220,13 +220,13 @@ export function BookingsSection() {
                     required
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full bg-white/[0.04] border-white/[0.08] text-white focus:border-purple-500/50 focus:ring-purple-500/20 [color-scheme:dark]"
+                    className="w-full bg-background/70 border border-border text-foreground focus:border-purple-500/50 focus:ring-purple-500/20"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-white/70 text-sm font-medium">
+                <Label htmlFor="message" className="text-foreground/80 text-sm font-medium">
                   Message
                 </Label>
                 <Textarea
@@ -235,7 +235,7 @@ export function BookingsSection() {
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-white/[0.04] border-white/[0.08] text-white placeholder:text-white/20 focus:border-purple-500/50 focus:ring-purple-500/20 resize-none"
+                  className="w-full bg-background/70 border border-border text-foreground placeholder:text-muted-foreground focus:border-purple-500/50 focus:ring-purple-500/20 resize-none"
                 />
               </div>
 
@@ -246,7 +246,7 @@ export function BookingsSection() {
               >
                 {submitting ? (
                   <span className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <div className="w-4 h-4 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin" />
                     Submitting...
                   </span>
                 ) : (
