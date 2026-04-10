@@ -58,6 +58,24 @@ function verifySignature(
 }
 
 /* ------------------------------------------------------------------ */
+/*  Helpers                                                             */
+/* ------------------------------------------------------------------ */
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
+}
+
+/** Strip newlines to prevent SMTP header injection */
+function sanitizeHeader(value: string): string {
+  return value.replace(/[\r\n]+/g, " ").trim();
+}
+
+/* ------------------------------------------------------------------ */
 /*  Forward inbound email to contact address (fire-and-forget)          */
 /* ------------------------------------------------------------------ */
 
@@ -66,6 +84,10 @@ function forwardEmail(data: InboundEmailData): void {
 
   const resend = getResendClient();
   const attachmentCount = data.attachments?.length ?? 0;
+  const safeFrom = escapeHtml(data.from);
+  const safeTo = data.to.map(escapeHtml).join(", ");
+  const safeSubject = escapeHtml(data.subject ?? "(no subject)");
+  const safeText = data.text ? escapeHtml(data.text) : null;
 
   const html = `
     <div style="background:#0a0a0a; padding:32px; border-radius:12px; font-family:system-ui,sans-serif; color:#f5f5f5; max-width:600px; margin:0 auto;">
@@ -86,15 +108,15 @@ function forwardEmail(data: InboundEmailData): void {
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
           <tr>
             <td style="padding:8px 0; color:#888; width:35%;">From</td>
-            <td style="padding:8px 0; color:#f5f5f5; font-weight:600;">${data.from}</td>
+            <td style="padding:8px 0; color:#f5f5f5; font-weight:600;">${safeFrom}</td>
           </tr>
           <tr>
             <td style="padding:8px 0; color:#888;">To</td>
-            <td style="padding:8px 0; color:#f5f5f5;">${data.to.join(", ")}</td>
+            <td style="padding:8px 0; color:#f5f5f5;">${safeTo}</td>
           </tr>
           <tr>
             <td style="padding:8px 0; color:#888;">Subject</td>
-            <td style="padding:8px 0; color:#f5f5f5; font-weight:600;">${data.subject ?? "(no subject)"}</td>
+            <td style="padding:8px 0; color:#f5f5f5; font-weight:600;">${safeSubject}</td>
           </tr>
           ${attachmentCount > 0 ? `
           <tr>
@@ -105,10 +127,10 @@ function forwardEmail(data: InboundEmailData): void {
         </table>
       </div>
 
-      ${data.text ? `
+      ${safeText ? `
       <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:20px; margin-bottom:20px;">
         <h2 style="font-size:16px; font-weight:700; color:#a855f7; margin:0 0 12px 0;">Message</h2>
-        <p style="color:#ccc; font-size:14px; line-height:1.6; margin:0; white-space:pre-wrap;">${data.text}</p>
+        <p style="color:#ccc; font-size:14px; line-height:1.6; margin:0; white-space:pre-wrap;">${safeText}</p>
       </div>
       ` : ""}
 
@@ -118,12 +140,15 @@ function forwardEmail(data: InboundEmailData): void {
     </div>
   `;
 
+  const safeFromHeader = sanitizeHeader(data.from);
+  const safeSubjectHeader = sanitizeHeader(data.subject ?? "(no subject)");
+
   resend.emails
     .send({
       from: "DJ Kimchi Inbound <onboarding@resend.dev>",
       to: [CONTACT_EMAIL],
-      replyTo: data.from,
-      subject: `[Inbound] ${data.subject ?? "(no subject)"} — from ${data.from}`,
+      replyTo: safeFromHeader,
+      subject: `[Inbound] ${safeSubjectHeader} — from ${safeFromHeader}`,
       html,
     })
     .then((result) => {
@@ -186,7 +211,7 @@ export async function POST(request: NextRequest) {
   const { data } = event;
 
   console.log(
-    `[inbound] Email received — from: ${data.from}, to: ${data.to?.join(", ")}, subject: ${data.subject ?? "(no subject)"}`
+    `[inbound] Email received — from: ${sanitizeHeader(data.from)}, to: ${data.to.map(sanitizeHeader).join(", ")}, subject: ${sanitizeHeader(data.subject ?? "(no subject)")}`
   );
 
   // Forward to contact address (non-blocking)
