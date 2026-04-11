@@ -7,24 +7,16 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `4b93c98c` (`4b93c98c9c22`) |
-| Branch | `copilot/design-self-updating-map-system` |
+| Commit | `ae296123` (`ae29612397ab`) |
+| Branch | `main` |
 | Author | unknown |
-| Generated | 2026-04-11T01:05:29.748Z |
+| Generated | 2026-04-11T01:09:59.282Z |
 | Total source files | 96 |
 | Files changed in last commit | 0 |
 
 ### Changes Since Last Version
 
-- feat: add self-updating codebase architecture map system
-- A: .github/workflows/update-codebase-map.yml
-- A: docs/.map-state.json
-- A: docs/codebase-map.json
-- A: docs/codebase-map.md
-- M: package.json
-- A: scripts/generate-architecture-map.mjs
-- A: scripts/hooks/post-commit
-- A: scripts/install-hooks.mjs
+- Merge pull request #9 from rauell1/copilot/design-self-updating-map-system
 
 ## Architecture Summary
 
@@ -252,21 +244,21 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
-| `package.json` | 3 |
-| `.cursorrules` | 2 |
-| `.github/workflows/update-readme-major-upgrade.yml` | 2 |
-| `.gitignore` | 2 |
-| `.mcp.json` | 2 |
-| `.opencode.json` | 2 |
-| `.windsurfrules` | 2 |
+| `package.json` | 5 |
+| `src/components/site/music.tsx` | 5 |
+| `README.md` | 3 |
+| `src/app/api/webhooks/inbound/route.ts` | 3 |
+| `package-lock.json` | 3 |
+| `.gitignore` | 3 |
+| `dj-kimchi` | 3 |
+| `docs/.map-state.json` | 2 |
+| `docs/codebase-map.json` | 2 |
+| `docs/codebase-map.md` | 2 |
+| `scripts/generate-architecture-map.mjs` | 2 |
+| `scripts/generate-codebase-map.mjs` | 2 |
+| `CODEBASE_DEBUG_MAP.md` | 2 |
 | `AGENTS.md` | 2 |
 | `CLAUDE.md` | 2 |
-| `CODEBASE_DEBUG_MAP.md` | 2 |
-| `Caddyfile.txt` | 2 |
-| `GEMINI.md` | 2 |
-| `README.md` | 2 |
-| `backend.sh` | 2 |
-| `bun.lock` | 2 |
 
 ## Debugging Zones
 

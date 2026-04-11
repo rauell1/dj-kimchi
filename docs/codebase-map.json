@@ -1,20 +1,12 @@
 {
   "meta": {
-    "version": "4b93c98c",
-    "commitHash": "4b93c98c9c22c0aad05a3211ec89cb5bf94309d4",
-    "branch": "copilot/design-self-updating-map-system",
+    "version": "ae296123",
+    "commitHash": "ae29612397ab634c26a44bac13e3acf9acde23ed",
+    "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-04-11T01:05:29.748Z",
+    "timestamp": "2026-04-11T01:09:59.282Z",
     "summary": [
-      "feat: add self-updating codebase architecture map system",
-      "A: .github/workflows/update-codebase-map.yml",
-      "A: docs/.map-state.json",
-      "A: docs/codebase-map.json",
-      "A: docs/codebase-map.md",
-      "M: package.json",
-      "A: scripts/generate-architecture-map.mjs",
-      "A: scripts/hooks/post-commit",
-      "A: scripts/install-hooks.mjs"
+      "Merge pull request #9 from rauell1/copilot/design-self-updating-map-system"
     ]
   },
   "stats": {
@@ -2305,30 +2297,54 @@
   "hotspots": [
     {
       "file": "package.json",
+      "commitCount": 5
+    },
+    {
+      "file": "src/components/site/music.tsx",
+      "commitCount": 5
+    },
+    {
+      "file": "README.md",
       "commitCount": 3
     },
     {
-      "file": ".cursorrules",
-      "commitCount": 2
+      "file": "src/app/api/webhooks/inbound/route.ts",
+      "commitCount": 3
     },
     {
-      "file": ".github/workflows/update-readme-major-upgrade.yml",
-      "commitCount": 2
+      "file": "package-lock.json",
+      "commitCount": 3
     },
     {
       "file": ".gitignore",
+      "commitCount": 3
+    },
+    {
+      "file": "dj-kimchi",
+      "commitCount": 3
+    },
+    {
+      "file": "docs/.map-state.json",
       "commitCount": 2
     },
     {
-      "file": ".mcp.json",
+      "file": "docs/codebase-map.json",
       "commitCount": 2
     },
     {
-      "file": ".opencode.json",
+      "file": "docs/codebase-map.md",
       "commitCount": 2
     },
     {
-      "file": ".windsurfrules",
+      "file": "scripts/generate-architecture-map.mjs",
+      "commitCount": 2
+    },
+    {
+      "file": "scripts/generate-codebase-map.mjs",
+      "commitCount": 2
+    },
+    {
+      "file": "CODEBASE_DEBUG_MAP.md",
       "commitCount": 2
     },
     {
@@ -2337,30 +2353,6 @@
     },
     {
       "file": "CLAUDE.md",
-      "commitCount": 2
-    },
-    {
-      "file": "CODEBASE_DEBUG_MAP.md",
-      "commitCount": 2
-    },
-    {
-      "file": "Caddyfile.txt",
-      "commitCount": 2
-    },
-    {
-      "file": "GEMINI.md",
-      "commitCount": 2
-    },
-    {
-      "file": "README.md",
-      "commitCount": 2
-    },
-    {
-      "file": "backend.sh",
-      "commitCount": 2
-    },
-    {
-      "file": "bun.lock",
       "commitCount": 2
     }
   ],
