@@ -1,4 +1,15 @@
 #!/usr/bin/env node
+/**
+ * generate-codebase-map.mjs  —  WORKSPACE-LEVEL overview map
+ *
+ * Scans top-level sibling directories (other projects in the workspace) and
+ * writes a high-level summary to CODEBASE_DEBUG_MAP.md.
+ * This is the broader workspace map used by AI coding tools.
+ *
+ * For a deep, version-aware analysis of THIS project specifically, use:
+ *   npm run arch:update  (scripts/generate-architecture-map.mjs)
+ *   → writes docs/codebase-map.md and docs/codebase-map.json
+ */
 
 import fs from "node:fs";
 import fsp from "node:fs/promises";

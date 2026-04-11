@@ -7,16 +7,24 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `5eabb66e` (`5eabb66ea999`) |
+| Commit | `4b93c98c` (`4b93c98c9c22`) |
 | Branch | `copilot/design-self-updating-map-system` |
 | Author | unknown |
-| Generated | 2026-04-11T01:03:06.338Z |
+| Generated | 2026-04-11T01:05:29.748Z |
 | Total source files | 96 |
 | Files changed in last commit | 0 |
 
 ### Changes Since Last Version
 
-- Merge branch 'main' of https://github.com/rauell1/dj-kimchi
+- feat: add self-updating codebase architecture map system
+- A: .github/workflows/update-codebase-map.yml
+- A: docs/.map-state.json
+- A: docs/codebase-map.json
+- A: docs/codebase-map.md
+- M: package.json
+- A: scripts/generate-architecture-map.mjs
+- A: scripts/hooks/post-commit
+- A: scripts/install-hooks.mjs
 
 ## Architecture Summary
 
@@ -244,6 +252,7 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
+| `package.json` | 3 |
 | `.cursorrules` | 2 |
 | `.github/workflows/update-readme-major-upgrade.yml` | 2 |
 | `.gitignore` | 2 |
@@ -258,7 +267,6 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 | `README.md` | 2 |
 | `backend.sh` | 2 |
 | `bun.lock` | 2 |
-| `components.json` | 2 |
 
 ## Debugging Zones
 

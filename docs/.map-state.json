@@ -7,8 +7,8 @@
     "next.config.ts": "769d79cd37299228",
     "postcss.config.mjs": "141ef24ca27a99d0",
     "prisma/schema.prisma": "7d7f7c0fc33bff4d",
-    "scripts/generate-architecture-map.mjs": "ace24d6222dfd700",
-    "scripts/generate-codebase-map.mjs": "afd38165bc2eafe0",
+    "scripts/generate-architecture-map.mjs": "8d15688879af68fc",
+    "scripts/generate-codebase-map.mjs": "ac666a139a54b165",
     "scripts/health-build.mjs": "ef51ff67b72df425",
     "scripts/health-check.mjs": "9581d867f72c5250",
     "scripts/health-setup.mjs": "9236324e97ef2854",
@@ -99,5 +99,5 @@
     "src/stores/audio-store.ts": "a98f1f62646dba7f",
     "tailwind.config.ts": "ade682235e52f45b"
   },
-  "lastCommit": "5eabb66ea999d049197a5db4b99559b89e3a7292"
+  "lastCommit": "4b93c98c9c22c0aad05a3211ec89cb5bf94309d4"
 }

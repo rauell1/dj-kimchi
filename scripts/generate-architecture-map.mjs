@@ -33,10 +33,16 @@ const OUT_JSON = path.join(DOCS_DIR, "codebase-map.json");
 const STATE_FILE = path.join(DOCS_DIR, ".map-state.json");
 const WATCH_DEBOUNCE_MS = 800;
 
-/** Directories we never scan. */
+/**
+ * Directories we never scan.
+ * NOTE: `docs` is excluded intentionally — it is the output target of this script.
+ * Including it would cause the script to analyse its own output and could trigger
+ * self-referential re-runs in watch mode.
+ */
 const IGNORED_DIRS = new Set([
   ".git", ".next", "node_modules", "dist", "build", "coverage",
-  ".turbo", ".cache", ".code-review-graph", "docs",
+  ".turbo", ".cache", ".code-review-graph",
+  "docs", // output directory — excluded to prevent self-referential updates
 ]);
 
 /** File extensions we analyse for imports. */

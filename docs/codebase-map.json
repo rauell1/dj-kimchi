@@ -1,12 +1,20 @@
 {
   "meta": {
-    "version": "5eabb66e",
-    "commitHash": "5eabb66ea999d049197a5db4b99559b89e3a7292",
+    "version": "4b93c98c",
+    "commitHash": "4b93c98c9c22c0aad05a3211ec89cb5bf94309d4",
     "branch": "copilot/design-self-updating-map-system",
     "author": "unknown",
-    "timestamp": "2026-04-11T01:03:06.338Z",
+    "timestamp": "2026-04-11T01:05:29.748Z",
     "summary": [
-      "Merge branch 'main' of https://github.com/rauell1/dj-kimchi"
+      "feat: add self-updating codebase architecture map system",
+      "A: .github/workflows/update-codebase-map.yml",
+      "A: docs/.map-state.json",
+      "A: docs/codebase-map.json",
+      "A: docs/codebase-map.md",
+      "M: package.json",
+      "A: scripts/generate-architecture-map.mjs",
+      "A: scripts/hooks/post-commit",
+      "A: scripts/install-hooks.mjs"
     ]
   },
   "stats": {
@@ -2296,6 +2304,10 @@
   },
   "hotspots": [
     {
+      "file": "package.json",
+      "commitCount": 3
+    },
+    {
       "file": ".cursorrules",
       "commitCount": 2
     },
@@ -2349,10 +2361,6 @@
     },
     {
       "file": "bun.lock",
-      "commitCount": 2
-    },
-    {
-      "file": "components.json",
       "commitCount": 2
     }
   ],
