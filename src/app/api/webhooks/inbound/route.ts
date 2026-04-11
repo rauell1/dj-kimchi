@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Webhook } from "resend";
+import { Webhook } from "svix";
 import { getResendClient, isResendConfigured, CONTACT_EMAIL } from "@/lib/resend";
 
 /* ------------------------------------------------------------------ */
