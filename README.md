@@ -21,6 +21,14 @@ npm install
 npm run dev
 ```
 
+## Workspace Structure Map
+
+Use the top-level map file to view current codebase structure and project branches:
+
+- [CODEBASE_DEBUG_MAP.md](CODEBASE_DEBUG_MAP.md)
+- Refresh once: npm run map:update
+- Live auto-refresh: npm run map:watch
+
 ## Auto README Updates
 
 This repo includes an automation that updates this README when `package.json` gets a **major version bump**.
