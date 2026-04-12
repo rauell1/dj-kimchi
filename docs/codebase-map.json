@@ -1,17 +1,17 @@
 {
   "meta": {
-    "version": "ae296123",
-    "commitHash": "ae29612397ab634c26a44bac13e3acf9acde23ed",
+    "version": "bb4a6a3a",
+    "commitHash": "bb4a6a3a0834ec55fefb100aa1c43b90d86caa13",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-04-11T01:09:59.282Z",
+    "timestamp": "2026-04-12T16:19:56.158Z",
     "summary": [
-      "Merge pull request #9 from rauell1/copilot/design-self-updating-map-system"
+      "Merge pull request #10 from rauell1/copilot/update-contact-card-form"
     ]
   },
   "stats": {
     "totalFiles": 96,
-    "changedFiles": 0,
+    "changedFiles": 2,
     "coreFiles": 9
   },
   "layers": {
@@ -1547,8 +1547,8 @@
           ]
         },
         "isCore": false,
-        "hash": "efe2416587c08b01",
-        "changed": false
+        "hash": "68694eb04ea55c77",
+        "changed": true
       },
       {
         "path": "src/lib/site-data.ts",
@@ -1582,8 +1582,8 @@
           ]
         },
         "isCore": false,
-        "hash": "ab5fb07321c65f81",
-        "changed": false
+        "hash": "4d4245ef81a06770",
+        "changed": true
       },
       {
         "path": "src/lib/utils.ts",
@@ -2304,6 +2304,22 @@
       "commitCount": 5
     },
     {
+      "file": "src/lib/resend.ts",
+      "commitCount": 3
+    },
+    {
+      "file": "docs/.map-state.json",
+      "commitCount": 3
+    },
+    {
+      "file": "docs/codebase-map.json",
+      "commitCount": 3
+    },
+    {
+      "file": "docs/codebase-map.md",
+      "commitCount": 3
+    },
+    {
       "file": "README.md",
       "commitCount": 3
     },
@@ -2324,15 +2340,7 @@
       "commitCount": 3
     },
     {
-      "file": "docs/.map-state.json",
-      "commitCount": 2
-    },
-    {
-      "file": "docs/codebase-map.json",
-      "commitCount": 2
-    },
-    {
-      "file": "docs/codebase-map.md",
+      "file": "src/lib/site-data.ts",
       "commitCount": 2
     },
     {
@@ -2346,16 +2354,11 @@
     {
       "file": "CODEBASE_DEBUG_MAP.md",
       "commitCount": 2
-    },
-    {
-      "file": "AGENTS.md",
-      "commitCount": 2
-    },
-    {
-      "file": "CLAUDE.md",
-      "commitCount": 2
     }
   ],
   "riskFlags": [],
-  "changedFiles": []
+  "changedFiles": [
+    "src/lib/resend.ts",
+    "src/lib/site-data.ts"
+  ]
 }

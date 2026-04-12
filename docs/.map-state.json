@@ -93,11 +93,11 @@
     "src/lib/db.ts": "28dac9772e711d4c",
     "src/lib/env.ts": "df1b68a3a3f63c68",
     "src/lib/rate-limit.ts": "0b645d4a81cf642f",
-    "src/lib/resend.ts": "efe2416587c08b01",
-    "src/lib/site-data.ts": "ab5fb07321c65f81",
+    "src/lib/resend.ts": "68694eb04ea55c77",
+    "src/lib/site-data.ts": "4d4245ef81a06770",
     "src/lib/utils.ts": "7c8c3dfc0cdd370d",
     "src/stores/audio-store.ts": "a98f1f62646dba7f",
     "tailwind.config.ts": "ade682235e52f45b"
   },
-  "lastCommit": "ae29612397ab634c26a44bac13e3acf9acde23ed"
+  "lastCommit": "bb4a6a3a0834ec55fefb100aa1c43b90d86caa13"
 }

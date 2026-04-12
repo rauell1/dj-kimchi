@@ -7,16 +7,16 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `ae296123` (`ae29612397ab`) |
+| Commit | `bb4a6a3a` (`bb4a6a3a0834`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-04-11T01:09:59.282Z |
+| Generated | 2026-04-12T16:19:56.158Z |
 | Total source files | 96 |
-| Files changed in last commit | 0 |
+| Files changed in last commit | 2 |
 
 ### Changes Since Last Version
 
-- Merge pull request #9 from rauell1/copilot/design-self-updating-map-system
+- Merge pull request #10 from rauell1/copilot/update-contact-card-form
 
 ## Architecture Summary
 
@@ -246,19 +246,19 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 |------|---------|
 | `package.json` | 5 |
 | `src/components/site/music.tsx` | 5 |
+| `src/lib/resend.ts` | 3 |
+| `docs/.map-state.json` | 3 |
+| `docs/codebase-map.json` | 3 |
+| `docs/codebase-map.md` | 3 |
 | `README.md` | 3 |
 | `src/app/api/webhooks/inbound/route.ts` | 3 |
 | `package-lock.json` | 3 |
 | `.gitignore` | 3 |
 | `dj-kimchi` | 3 |
-| `docs/.map-state.json` | 2 |
-| `docs/codebase-map.json` | 2 |
-| `docs/codebase-map.md` | 2 |
+| `src/lib/site-data.ts` | 2 |
 | `scripts/generate-architecture-map.mjs` | 2 |
 | `scripts/generate-codebase-map.mjs` | 2 |
 | `CODEBASE_DEBUG_MAP.md` | 2 |
-| `AGENTS.md` | 2 |
-| `CLAUDE.md` | 2 |
 
 ## Debugging Zones
 
