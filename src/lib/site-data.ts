@@ -221,7 +221,7 @@ export const EVENT_TYPES = [
   "Radio Shows & Podcasts",
 ] as const;
 
-export const CONTACT_EMAIL = "mayosupreme@gmail.com";
+export const CONTACT_EMAIL = "deejaykimchi@gmail.com";
 
 export const HEARTHIS_TRACKS: HearThisTrack[] = [
   {

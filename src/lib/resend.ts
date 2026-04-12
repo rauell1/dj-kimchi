@@ -5,7 +5,7 @@ import { Resend } from "resend";
  * Replace RESEND_API_KEY in .env with your actual Resend API key.
  */
 
-const CONTACT_EMAIL = "royokola3@gmail.com"; // TODO: switch to verified domain email before going to production
+const CONTACT_EMAIL = "deejaykimchi@gmail.com";
 
 // Validate API key on import
 const apiKey = process.env.RESEND_API_KEY;
