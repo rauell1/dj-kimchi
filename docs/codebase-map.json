@@ -1,17 +1,18 @@
 {
   "meta": {
-    "version": "bb4a6a3a",
-    "commitHash": "bb4a6a3a0834ec55fefb100aa1c43b90d86caa13",
+    "version": "4e66749f",
+    "commitHash": "4e66749f4e230a04ca970b663e0be0abc218a66c",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-04-12T16:19:56.158Z",
+    "timestamp": "2026-05-02T08:39:55.215Z",
     "summary": [
-      "Merge pull request #10 from rauell1/copilot/update-contact-card-form"
+      "chore: set default theme to light mode",
+      "M: src/app/layout.tsx"
     ]
   },
   "stats": {
     "totalFiles": 96,
-    "changedFiles": 2,
+    "changedFiles": 1,
     "coreFiles": 9
   },
   "layers": {
@@ -62,12 +63,13 @@
             "src/components/theme-provider"
           ],
           "external": [
-            "next"
+            "next",
+            "@vercel/analytics"
           ]
         },
         "isCore": false,
-        "hash": "06b5134241124483",
-        "changed": false
+        "hash": "127d39cd8a45e947",
+        "changed": true
       }
     ],
     "apiRoutes": [
@@ -1548,7 +1550,7 @@
         },
         "isCore": false,
         "hash": "68694eb04ea55c77",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/lib/site-data.ts",
@@ -1583,7 +1585,7 @@
         },
         "isCore": false,
         "hash": "4d4245ef81a06770",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/lib/utils.ts",
@@ -2141,6 +2143,10 @@
         "usages": 1
       },
       {
+        "pkg": "@vercel/analytics",
+        "usages": 1
+      },
+      {
         "pkg": "@radix-ui/react-accordion",
         "usages": 1
       },
@@ -2297,6 +2303,14 @@
   "hotspots": [
     {
       "file": "package.json",
+      "commitCount": 6
+    },
+    {
+      "file": "package-lock.json",
+      "commitCount": 5
+    },
+    {
+      "file": "README.md",
       "commitCount": 5
     },
     {
@@ -2304,31 +2318,27 @@
       "commitCount": 5
     },
     {
+      "file": "src/app/layout.tsx",
+      "commitCount": 4
+    },
+    {
+      "file": "docs/.map-state.json",
+      "commitCount": 4
+    },
+    {
+      "file": "docs/codebase-map.json",
+      "commitCount": 4
+    },
+    {
+      "file": "docs/codebase-map.md",
+      "commitCount": 4
+    },
+    {
       "file": "src/lib/resend.ts",
       "commitCount": 3
     },
     {
-      "file": "docs/.map-state.json",
-      "commitCount": 3
-    },
-    {
-      "file": "docs/codebase-map.json",
-      "commitCount": 3
-    },
-    {
-      "file": "docs/codebase-map.md",
-      "commitCount": 3
-    },
-    {
-      "file": "README.md",
-      "commitCount": 3
-    },
-    {
       "file": "src/app/api/webhooks/inbound/route.ts",
-      "commitCount": 3
-    },
-    {
-      "file": "package-lock.json",
       "commitCount": 3
     },
     {
@@ -2350,15 +2360,10 @@
     {
       "file": "scripts/generate-codebase-map.mjs",
       "commitCount": 2
-    },
-    {
-      "file": "CODEBASE_DEBUG_MAP.md",
-      "commitCount": 2
     }
   ],
   "riskFlags": [],
   "changedFiles": [
-    "src/lib/resend.ts",
-    "src/lib/site-data.ts"
+    "src/app/layout.tsx"
   ]
 }

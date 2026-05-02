@@ -7,16 +7,17 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `bb4a6a3a` (`bb4a6a3a0834`) |
+| Commit | `4e66749f` (`4e66749f4e23`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-04-12T16:19:56.158Z |
+| Generated | 2026-05-02T08:39:55.215Z |
 | Total source files | 96 |
-| Files changed in last commit | 2 |
+| Files changed in last commit | 1 |
 
 ### Changes Since Last Version
 
-- Merge pull request #10 from rauell1/copilot/update-contact-card-form
+- chore: set default theme to light mode
+- M: src/app/layout.tsx
 
 ## Architecture Summary
 
@@ -232,11 +233,11 @@ Files with the most dependents (most imported):
 | `util` | 1 |
 | `path` | 1 |
 | `svix` | 1 |
+| `@vercel/analytics` | 1 |
 | `@radix-ui/react-accordion` | 1 |
 | `@radix-ui/react-alert-dialog` | 1 |
 | `@radix-ui/react-aspect-ratio` | 1 |
 | `@radix-ui/react-avatar` | 1 |
-| `react-day-picker` | 1 |
 
 ## Hotspots (Frequently Modified Files)
 
@@ -244,21 +245,21 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
-| `package.json` | 5 |
+| `package.json` | 6 |
+| `package-lock.json` | 5 |
+| `README.md` | 5 |
 | `src/components/site/music.tsx` | 5 |
+| `src/app/layout.tsx` | 4 |
+| `docs/.map-state.json` | 4 |
+| `docs/codebase-map.json` | 4 |
+| `docs/codebase-map.md` | 4 |
 | `src/lib/resend.ts` | 3 |
-| `docs/.map-state.json` | 3 |
-| `docs/codebase-map.json` | 3 |
-| `docs/codebase-map.md` | 3 |
-| `README.md` | 3 |
 | `src/app/api/webhooks/inbound/route.ts` | 3 |
-| `package-lock.json` | 3 |
 | `.gitignore` | 3 |
 | `dj-kimchi` | 3 |
 | `src/lib/site-data.ts` | 2 |
 | `scripts/generate-architecture-map.mjs` | 2 |
 | `scripts/generate-codebase-map.mjs` | 2 |
-| `CODEBASE_DEBUG_MAP.md` | 2 |
 
 ## Debugging Zones
 

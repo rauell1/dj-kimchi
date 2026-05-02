@@ -20,7 +20,7 @@
     "src/app/api/route.ts": "bb3323e70b608cf9",
     "src/app/api/webhooks/inbound/route.ts": "7c0e33310ec486e4",
     "src/app/globals.css": "4ee865ac9a1b7f20",
-    "src/app/layout.tsx": "06b5134241124483",
+    "src/app/layout.tsx": "127d39cd8a45e947",
     "src/app/loading.tsx": "79393b3cda0d28b8",
     "src/app/page.tsx": "4ab91db83439be43",
     "src/components/error-boundary.tsx": "2caa68f80a70e1c1",
@@ -99,5 +99,5 @@
     "src/stores/audio-store.ts": "a98f1f62646dba7f",
     "tailwind.config.ts": "ade682235e52f45b"
   },
-  "lastCommit": "bb4a6a3a0834ec55fefb100aa1c43b90d86caa13"
+  "lastCommit": "4e66749f4e230a04ca970b663e0be0abc218a66c"
 }
