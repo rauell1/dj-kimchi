@@ -164,3 +164,4 @@ This repository includes automation that updates this README when `package.json`
 - Workflow: `.github/workflows/update-readme-major-upgrade.yml`
 - Trigger: push to `main` or `master` with `package.json` changes
 
+<!-- deploy: trigger -->
