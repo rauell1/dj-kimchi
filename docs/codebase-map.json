@@ -1,28 +1,18 @@
 {
   "meta": {
-    "version": "6c0833aa",
-    "commitHash": "6c0833aab153c6843723aaf7c5eab5548ac2fe74",
+    "version": "631fb144",
+    "commitHash": "631fb144df5543116d0e54e35399adba871fa746",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-06-13T09:07:22.626Z",
+    "timestamp": "2026-06-13T09:14:54.116Z",
     "summary": [
-      "feat: convert to multi-page — 5 indexable routes",
-      "A: src/app/about/page.tsx",
-      "A: src/app/bookings/page.tsx",
-      "M: src/app/layout.tsx",
-      "A: src/app/music/page.tsx",
-      "M: src/app/page.tsx",
-      "M: src/app/sitemap.ts",
-      "A: src/app/videos/page.tsx",
-      "M: src/components/site/footer.tsx",
-      "M: src/components/site/hero.tsx",
-      "M: src/components/site/navigation.tsx",
-      "M: src/lib/site-data.ts"
+      "fix: guard metadataBase new URL() against invalid NEXT_PUBLIC_SITE_URL",
+      "M: src/app/layout.tsx"
     ]
   },
   "stats": {
     "totalFiles": 102,
-    "changedFiles": 11,
+    "changedFiles": 1,
     "coreFiles": 9
   },
   "layers": {
@@ -47,7 +37,7 @@
         },
         "isCore": false,
         "hash": "66694fd564a7448d",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/app/bookings/page.tsx",
@@ -69,7 +59,7 @@
         },
         "isCore": false,
         "hash": "450eba3c635ffe7c",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/app/music/page.tsx",
@@ -91,7 +81,7 @@
         },
         "isCore": false,
         "hash": "8abdff4817943e3c",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/app/page.tsx",
@@ -110,7 +100,7 @@
         },
         "isCore": false,
         "hash": "911fb91bd75259f9",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/app/videos/page.tsx",
@@ -132,7 +122,7 @@
         },
         "isCore": false,
         "hash": "26f4aabac0e156ff",
-        "changed": true
+        "changed": false
       }
     ],
     "layouts": [
@@ -161,7 +151,7 @@
           ]
         },
         "isCore": false,
-        "hash": "f95e074a580d1f77",
+        "hash": "000ea0c6052a500a",
         "changed": true
       }
     ],
@@ -335,7 +325,7 @@
         },
         "isCore": false,
         "hash": "1c829fbec99b01f4",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/global-player.tsx",
@@ -376,7 +366,7 @@
         },
         "isCore": false,
         "hash": "a58f46c48e3d7134",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/index.ts",
@@ -465,7 +455,7 @@
         },
         "isCore": false,
         "hash": "8c7d2525b14da088",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/page-padding.tsx",
@@ -1680,7 +1670,7 @@
         },
         "isCore": false,
         "hash": "731ba5e8656c4639",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/lib/utils.ts",
@@ -2414,19 +2404,19 @@
   "hotspots": [
     {
       "file": "src/app/layout.tsx",
-      "commitCount": 7
+      "commitCount": 8
     },
     {
       "file": "docs/.map-state.json",
-      "commitCount": 7
+      "commitCount": 8
     },
     {
       "file": "docs/codebase-map.json",
-      "commitCount": 7
+      "commitCount": 8
     },
     {
       "file": "docs/codebase-map.md",
-      "commitCount": 7
+      "commitCount": 8
     },
     {
       "file": "README.md",
@@ -2475,16 +2465,6 @@
   ],
   "riskFlags": [],
   "changedFiles": [
-    "src/app/about/page.tsx",
-    "src/app/bookings/page.tsx",
-    "src/app/layout.tsx",
-    "src/app/music/page.tsx",
-    "src/app/page.tsx",
-    "src/app/sitemap.ts",
-    "src/app/videos/page.tsx",
-    "src/components/site/footer.tsx",
-    "src/components/site/hero.tsx",
-    "src/components/site/navigation.tsx",
-    "src/lib/site-data.ts"
+    "src/app/layout.tsx"
   ]
 }

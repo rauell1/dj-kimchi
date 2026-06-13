@@ -7,27 +7,17 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `6c0833aa` (`6c0833aab153`) |
+| Commit | `631fb144` (`631fb144df55`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-06-13T09:07:22.626Z |
+| Generated | 2026-06-13T09:14:54.116Z |
 | Total source files | 102 |
-| Files changed in last commit | 11 |
+| Files changed in last commit | 1 |
 
 ### Changes Since Last Version
 
-- feat: convert to multi-page — 5 indexable routes
-- A: src/app/about/page.tsx
-- A: src/app/bookings/page.tsx
+- fix: guard metadataBase new URL() against invalid NEXT_PUBLIC_SITE_URL
 - M: src/app/layout.tsx
-- A: src/app/music/page.tsx
-- M: src/app/page.tsx
-- M: src/app/sitemap.ts
-- A: src/app/videos/page.tsx
-- M: src/components/site/footer.tsx
-- M: src/components/site/hero.tsx
-- M: src/components/site/navigation.tsx
-- M: src/lib/site-data.ts
 
 ## Architecture Summary
 
@@ -259,10 +249,10 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
-| `src/app/layout.tsx` | 7 |
-| `docs/.map-state.json` | 7 |
-| `docs/codebase-map.json` | 7 |
-| `docs/codebase-map.md` | 7 |
+| `src/app/layout.tsx` | 8 |
+| `docs/.map-state.json` | 8 |
+| `docs/codebase-map.json` | 8 |
+| `docs/codebase-map.md` | 8 |
 | `README.md` | 6 |
 | `package.json` | 6 |
 | `package-lock.json` | 5 |
