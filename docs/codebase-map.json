@@ -1,18 +1,25 @@
 {
   "meta": {
-    "version": "631fb144",
-    "commitHash": "631fb144df5543116d0e54e35399adba871fa746",
+    "version": "eca726bb",
+    "commitHash": "eca726bb6c128be0579bdfc1865be7a08e9297a6",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-06-13T09:14:54.116Z",
+    "timestamp": "2026-06-13T09:22:52.038Z",
     "summary": [
-      "fix: guard metadataBase new URL() against invalid NEXT_PUBLIC_SITE_URL",
-      "M: src/app/layout.tsx"
+      "fix: centralise BASE_URL validation to fix invalid sitemap URLs in GSC",
+      "M: src/app/about/page.tsx",
+      "M: src/app/bookings/page.tsx",
+      "M: src/app/layout.tsx",
+      "M: src/app/music/page.tsx",
+      "M: src/app/robots.ts",
+      "M: src/app/sitemap.ts",
+      "M: src/app/videos/page.tsx",
+      "A: src/lib/site-url.ts"
     ]
   },
   "stats": {
-    "totalFiles": 102,
-    "changedFiles": 1,
+    "totalFiles": 103,
+    "changedFiles": 8,
     "coreFiles": 9
   },
   "layers": {
@@ -29,15 +36,16 @@
         "imports": {
           "internal": [
             "src/components/error-boundary",
-            "src/components/site/about"
+            "src/components/site/about",
+            "src/lib/site-url"
           ],
           "external": [
             "next"
           ]
         },
         "isCore": false,
-        "hash": "66694fd564a7448d",
-        "changed": false
+        "hash": "81a1c0846badc1b4",
+        "changed": true
       },
       {
         "path": "src/app/bookings/page.tsx",
@@ -51,15 +59,16 @@
         "imports": {
           "internal": [
             "src/components/error-boundary",
-            "src/components/site/bookings"
+            "src/components/site/bookings",
+            "src/lib/site-url"
           ],
           "external": [
             "next"
           ]
         },
         "isCore": false,
-        "hash": "450eba3c635ffe7c",
-        "changed": false
+        "hash": "825488de14b931ba",
+        "changed": true
       },
       {
         "path": "src/app/music/page.tsx",
@@ -73,15 +82,16 @@
         "imports": {
           "internal": [
             "src/components/error-boundary",
-            "src/components/site/music"
+            "src/components/site/music",
+            "src/lib/site-url"
           ],
           "external": [
             "next"
           ]
         },
         "isCore": false,
-        "hash": "8abdff4817943e3c",
-        "changed": false
+        "hash": "ca49100fe4b1eb8a",
+        "changed": true
       },
       {
         "path": "src/app/page.tsx",
@@ -114,15 +124,16 @@
         "imports": {
           "internal": [
             "src/components/error-boundary",
-            "src/components/site/videos"
+            "src/components/site/videos",
+            "src/lib/site-url"
           ],
           "external": [
             "next"
           ]
         },
         "isCore": false,
-        "hash": "26f4aabac0e156ff",
-        "changed": false
+        "hash": "3e9eab7e45f6a536",
+        "changed": true
       }
     ],
     "layouts": [
@@ -143,7 +154,8 @@
             "src/components/site/navigation",
             "src/components/site/footer",
             "src/components/site/global-player",
-            "src/components/site/page-padding"
+            "src/components/site/page-padding",
+            "src/lib/site-url"
           ],
           "external": [
             "next",
@@ -151,7 +163,7 @@
           ]
         },
         "isCore": false,
-        "hash": "000ea0c6052a500a",
+        "hash": "f85b746f5b7bc343",
         "changed": true
       }
     ],
@@ -1673,6 +1685,21 @@
         "changed": false
       },
       {
+        "path": "src/lib/site-url.ts",
+        "alias": "@/lib/site-url.ts",
+        "role": "lib",
+        "exports": [
+          "BASE_URL"
+        ],
+        "imports": {
+          "internal": [],
+          "external": []
+        },
+        "isCore": false,
+        "hash": "d7718842752341b8",
+        "changed": true
+      },
+      {
         "path": "src/lib/utils.ts",
         "alias": "@/lib/utils.ts",
         "role": "lib",
@@ -1709,7 +1736,8 @@
       "scripts/update-readme-major.mjs": [],
       "src/app/about/page.tsx": [
         "src/components/error-boundary",
-        "src/components/site/about"
+        "src/components/site/about",
+        "src/lib/site-url"
       ],
       "src/app/api/booking/route.ts": [
         "src/lib/db",
@@ -1727,7 +1755,8 @@
       ],
       "src/app/bookings/page.tsx": [
         "src/components/error-boundary",
-        "src/components/site/bookings"
+        "src/components/site/bookings",
+        "src/lib/site-url"
       ],
       "src/app/layout.tsx": [
         "src/app/globals.css",
@@ -1736,22 +1765,29 @@
         "src/components/site/navigation",
         "src/components/site/footer",
         "src/components/site/global-player",
-        "src/components/site/page-padding"
+        "src/components/site/page-padding",
+        "src/lib/site-url"
       ],
       "src/app/loading.tsx": [],
       "src/app/music/page.tsx": [
         "src/components/error-boundary",
-        "src/components/site/music"
+        "src/components/site/music",
+        "src/lib/site-url"
       ],
       "src/app/page.tsx": [
         "src/components/error-boundary",
         "src/components/site/hero"
       ],
-      "src/app/robots.ts": [],
-      "src/app/sitemap.ts": [],
+      "src/app/robots.ts": [
+        "src/lib/site-url"
+      ],
+      "src/app/sitemap.ts": [
+        "src/lib/site-url"
+      ],
       "src/app/videos/page.tsx": [
         "src/components/error-boundary",
-        "src/components/site/videos"
+        "src/components/site/videos",
+        "src/lib/site-url"
       ],
       "src/components/error-boundary.tsx": [],
       "src/components/site/about.tsx": [
@@ -1981,6 +2017,7 @@
       "src/lib/rate-limit.ts": [],
       "src/lib/resend.ts": [],
       "src/lib/site-data.ts": [],
+      "src/lib/site-url.ts": [],
       "src/lib/utils.ts": [],
       "src/stores/audio-store.ts": [],
       "tailwind.config.ts": []
@@ -1996,6 +2033,15 @@
       "src/components/site/about": [
         "src/app/about/page.tsx",
         "src/components/site/index.ts"
+      ],
+      "src/lib/site-url": [
+        "src/app/about/page.tsx",
+        "src/app/bookings/page.tsx",
+        "src/app/layout.tsx",
+        "src/app/music/page.tsx",
+        "src/app/robots.ts",
+        "src/app/sitemap.ts",
+        "src/app/videos/page.tsx"
       ],
       "src/lib/db": [
         "src/app/api/booking/route.ts",
@@ -2404,19 +2450,19 @@
   "hotspots": [
     {
       "file": "src/app/layout.tsx",
-      "commitCount": 8
+      "commitCount": 9
     },
     {
       "file": "docs/.map-state.json",
-      "commitCount": 8
+      "commitCount": 9
     },
     {
       "file": "docs/codebase-map.json",
-      "commitCount": 8
+      "commitCount": 9
     },
     {
       "file": "docs/codebase-map.md",
-      "commitCount": 8
+      "commitCount": 9
     },
     {
       "file": "README.md",
@@ -2435,11 +2481,19 @@
       "commitCount": 5
     },
     {
+      "file": "src/app/sitemap.ts",
+      "commitCount": 4
+    },
+    {
+      "file": ".gitignore",
+      "commitCount": 4
+    },
+    {
       "file": "src/app/page.tsx",
       "commitCount": 4
     },
     {
-      "file": "src/app/sitemap.ts",
+      "file": "src/app/robots.ts",
       "commitCount": 3
     },
     {
@@ -2453,18 +2507,17 @@
     {
       "file": "src/components/site/navigation.tsx",
       "commitCount": 3
-    },
-    {
-      "file": "src/lib/site-data.ts",
-      "commitCount": 3
-    },
-    {
-      "file": "CLAUDE.md",
-      "commitCount": 3
     }
   ],
   "riskFlags": [],
   "changedFiles": [
-    "src/app/layout.tsx"
+    "src/app/about/page.tsx",
+    "src/app/bookings/page.tsx",
+    "src/app/layout.tsx",
+    "src/app/music/page.tsx",
+    "src/app/robots.ts",
+    "src/app/sitemap.ts",
+    "src/app/videos/page.tsx",
+    "src/lib/site-url.ts"
   ]
 }

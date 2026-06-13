@@ -7,17 +7,24 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `631fb144` (`631fb144df55`) |
+| Commit | `eca726bb` (`eca726bb6c12`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-06-13T09:14:54.116Z |
-| Total source files | 102 |
-| Files changed in last commit | 1 |
+| Generated | 2026-06-13T09:22:52.038Z |
+| Total source files | 103 |
+| Files changed in last commit | 8 |
 
 ### Changes Since Last Version
 
-- fix: guard metadataBase new URL() against invalid NEXT_PUBLIC_SITE_URL
+- fix: centralise BASE_URL validation to fix invalid sitemap URLs in GSC
+- M: src/app/about/page.tsx
+- M: src/app/bookings/page.tsx
 - M: src/app/layout.tsx
+- M: src/app/music/page.tsx
+- M: src/app/robots.ts
+- M: src/app/sitemap.ts
+- M: src/app/videos/page.tsx
+- A: src/lib/site-url.ts
 
 ## Architecture Summary
 
@@ -165,7 +172,7 @@ dj-kimchi/              Next.js 16 DJ portfolio + booking system
 |------|------|---------|-------|
 | `src/stores/audio-store.ts` | store | TrackSource, AudioTrack, RepeatMode, AudioStore | ⚠️ yes |
 
-### Library / Utilities (6)
+### Library / Utilities (7)
 
 | File | Role | Exports | Core? |
 |------|------|---------|-------|
@@ -174,6 +181,7 @@ dj-kimchi/              Next.js 16 DJ portfolio + booking system
 | `src/lib/rate-limit.ts` | lib | rateLimit | ⚠️ yes |
 | `src/lib/resend.ts` | lib | isResendConfigured, getResendClient | no |
 | `src/lib/site-data.ts` | lib | NavLink, Mix, HearThisTrack, Video | no |
+| `src/lib/site-url.ts` | lib | BASE_URL | no |
 | `src/lib/utils.ts` | lib | cn | no |
 
 ## Entry Points
@@ -199,6 +207,7 @@ Files with the most dependents (most imported):
 |------|-----------------------|
 | `src/lib/utils` | 44 |
 | `src/lib/site-data` | 8 |
+| `src/lib/site-url` | 7 |
 | `src/components/ui/button` | 6 |
 | `src/components/error-boundary` | 5 |
 | `src/hooks/use-in-view` | 5 |
@@ -216,7 +225,6 @@ Files with the most dependents (most imported):
 | `src/components/site/videos` | 2 |
 | `src/components/ui/input` | 2 |
 | `src/components/ui/label` | 2 |
-| `src/hooks/use-toast` | 2 |
 
 ### Top External Packages
 
@@ -249,21 +257,21 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
-| `src/app/layout.tsx` | 8 |
-| `docs/.map-state.json` | 8 |
-| `docs/codebase-map.json` | 8 |
-| `docs/codebase-map.md` | 8 |
+| `src/app/layout.tsx` | 9 |
+| `docs/.map-state.json` | 9 |
+| `docs/codebase-map.json` | 9 |
+| `docs/codebase-map.md` | 9 |
 | `README.md` | 6 |
 | `package.json` | 6 |
 | `package-lock.json` | 5 |
 | `src/components/site/music.tsx` | 5 |
+| `src/app/sitemap.ts` | 4 |
+| `.gitignore` | 4 |
 | `src/app/page.tsx` | 4 |
-| `src/app/sitemap.ts` | 3 |
+| `src/app/robots.ts` | 3 |
 | `src/components/site/footer.tsx` | 3 |
 | `src/components/site/hero.tsx` | 3 |
 | `src/components/site/navigation.tsx` | 3 |
-| `src/lib/site-data.ts` | 3 |
-| `CLAUDE.md` | 3 |
 
 ## Debugging Zones
 
