@@ -1,18 +1,24 @@
 {
   "meta": {
-    "version": "4e66749f",
-    "commitHash": "4e66749f4e230a04ca970b663e0be0abc218a66c",
+    "version": "f6e0a425",
+    "commitHash": "f6e0a425dc5ba256797b8328f5c25617a9a7403b",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-05-02T08:39:55.215Z",
+    "timestamp": "2026-06-13T08:49:07.997Z",
     "summary": [
-      "chore: set default theme to light mode",
-      "M: src/app/layout.tsx"
+      "feat: full SEO implementation — sitemap, robots, JSON-LD, SSR fix",
+      "M: CLAUDE.md",
+      "A: public/BingSiteAuth.xml",
+      "A: public/googlee69e3a7319b06c7f.html",
+      "M: src/app/layout.tsx",
+      "M: src/app/page.tsx",
+      "A: src/app/robots.ts",
+      "A: src/app/sitemap.ts"
     ]
   },
   "stats": {
-    "totalFiles": 96,
-    "changedFiles": 1,
+    "totalFiles": 98,
+    "changedFiles": 4,
     "coreFiles": 9
   },
   "layers": {
@@ -42,8 +48,8 @@
           "external": []
         },
         "isCore": false,
-        "hash": "4ab91db83439be43",
-        "changed": false
+        "hash": "f037a7b9dde1efda",
+        "changed": true
       }
     ],
     "layouts": [
@@ -68,7 +74,7 @@
           ]
         },
         "isCore": false,
-        "hash": "127d39cd8a45e947",
+        "hash": "653765855ee1d423",
         "changed": true
       }
     ],
@@ -1655,6 +1661,8 @@
         "src/components/site/global-player",
         "src/components/site/page-padding"
       ],
+      "src/app/robots.ts": [],
+      "src/app/sitemap.ts": [],
       "src/components/error-boundary.tsx": [],
       "src/components/site/about.tsx": [
         "src/hooks/use-in-view",
@@ -2091,16 +2099,16 @@
         "usages": 30
       },
       {
+        "pkg": "next",
+        "usages": 8
+      },
+      {
         "pkg": "framer-motion",
         "usages": 8
       },
       {
         "pkg": "class-variance-authority",
         "usages": 8
-      },
-      {
-        "pkg": "next",
-        "usages": 6
       },
       {
         "pkg": "@radix-ui/react-slot",
@@ -2302,15 +2310,31 @@
   },
   "hotspots": [
     {
+      "file": "README.md",
+      "commitCount": 6
+    },
+    {
       "file": "package.json",
       "commitCount": 6
     },
     {
-      "file": "package-lock.json",
+      "file": "src/app/layout.tsx",
       "commitCount": 5
     },
     {
-      "file": "README.md",
+      "file": "docs/.map-state.json",
+      "commitCount": 5
+    },
+    {
+      "file": "docs/codebase-map.json",
+      "commitCount": 5
+    },
+    {
+      "file": "docs/codebase-map.md",
+      "commitCount": 5
+    },
+    {
+      "file": "package-lock.json",
       "commitCount": 5
     },
     {
@@ -2318,20 +2342,12 @@
       "commitCount": 5
     },
     {
-      "file": "src/app/layout.tsx",
-      "commitCount": 4
+      "file": "CLAUDE.md",
+      "commitCount": 3
     },
     {
-      "file": "docs/.map-state.json",
-      "commitCount": 4
-    },
-    {
-      "file": "docs/codebase-map.json",
-      "commitCount": 4
-    },
-    {
-      "file": "docs/codebase-map.md",
-      "commitCount": 4
+      "file": "src/app/page.tsx",
+      "commitCount": 3
     },
     {
       "file": "src/lib/resend.ts",
@@ -2352,18 +2368,13 @@
     {
       "file": "src/lib/site-data.ts",
       "commitCount": 2
-    },
-    {
-      "file": "scripts/generate-architecture-map.mjs",
-      "commitCount": 2
-    },
-    {
-      "file": "scripts/generate-codebase-map.mjs",
-      "commitCount": 2
     }
   ],
   "riskFlags": [],
   "changedFiles": [
-    "src/app/layout.tsx"
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "src/app/robots.ts",
+    "src/app/sitemap.ts"
   ]
 }

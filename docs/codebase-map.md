@@ -7,17 +7,23 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `4e66749f` (`4e66749f4e23`) |
+| Commit | `f6e0a425` (`f6e0a425dc5b`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-05-02T08:39:55.215Z |
-| Total source files | 96 |
-| Files changed in last commit | 1 |
+| Generated | 2026-06-13T08:49:07.997Z |
+| Total source files | 98 |
+| Files changed in last commit | 4 |
 
 ### Changes Since Last Version
 
-- chore: set default theme to light mode
+- feat: full SEO implementation — sitemap, robots, JSON-LD, SSR fix
+- M: CLAUDE.md
+- A: public/BingSiteAuth.xml
+- A: public/googlee69e3a7319b06c7f.html
 - M: src/app/layout.tsx
+- M: src/app/page.tsx
+- A: src/app/robots.ts
+- A: src/app/sitemap.ts
 
 ## Architecture Summary
 
@@ -220,9 +226,9 @@ Files with the most dependents (most imported):
 |---------|-----------------|
 | `react` | 56 |
 | `lucide-react` | 30 |
+| `next` | 8 |
 | `framer-motion` | 8 |
 | `class-variance-authority` | 8 |
-| `next` | 6 |
 | `@radix-ui/react-slot` | 5 |
 | `next-themes` | 3 |
 | `@prisma/client` | 2 |
@@ -245,21 +251,21 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
+| `README.md` | 6 |
 | `package.json` | 6 |
+| `src/app/layout.tsx` | 5 |
+| `docs/.map-state.json` | 5 |
+| `docs/codebase-map.json` | 5 |
+| `docs/codebase-map.md` | 5 |
 | `package-lock.json` | 5 |
-| `README.md` | 5 |
 | `src/components/site/music.tsx` | 5 |
-| `src/app/layout.tsx` | 4 |
-| `docs/.map-state.json` | 4 |
-| `docs/codebase-map.json` | 4 |
-| `docs/codebase-map.md` | 4 |
+| `CLAUDE.md` | 3 |
+| `src/app/page.tsx` | 3 |
 | `src/lib/resend.ts` | 3 |
 | `src/app/api/webhooks/inbound/route.ts` | 3 |
 | `.gitignore` | 3 |
 | `dj-kimchi` | 3 |
 | `src/lib/site-data.ts` | 2 |
-| `scripts/generate-architecture-map.mjs` | 2 |
-| `scripts/generate-codebase-map.mjs` | 2 |
 
 ## Debugging Zones
 

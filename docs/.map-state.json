@@ -20,9 +20,11 @@
     "src/app/api/route.ts": "bb3323e70b608cf9",
     "src/app/api/webhooks/inbound/route.ts": "7c0e33310ec486e4",
     "src/app/globals.css": "4ee865ac9a1b7f20",
-    "src/app/layout.tsx": "127d39cd8a45e947",
+    "src/app/layout.tsx": "653765855ee1d423",
     "src/app/loading.tsx": "79393b3cda0d28b8",
-    "src/app/page.tsx": "4ab91db83439be43",
+    "src/app/page.tsx": "f037a7b9dde1efda",
+    "src/app/robots.ts": "0bde7692fce02d5a",
+    "src/app/sitemap.ts": "623618c63ca66127",
     "src/components/error-boundary.tsx": "2caa68f80a70e1c1",
     "src/components/site/about.tsx": "c167d5cc4212094b",
     "src/components/site/bookings.tsx": "c0d9862fa7903ca6",
@@ -99,5 +101,5 @@
     "src/stores/audio-store.ts": "a98f1f62646dba7f",
     "tailwind.config.ts": "ade682235e52f45b"
   },
-  "lastCommit": "4e66749f4e230a04ca970b663e0be0abc218a66c"
+  "lastCommit": "f6e0a425dc5ba256797b8328f5c25617a9a7403b"
 }
