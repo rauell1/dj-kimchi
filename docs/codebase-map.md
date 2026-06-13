@@ -7,19 +7,27 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `6cd572f6` (`6cd572f6820f`) |
+| Commit | `6c0833aa` (`6c0833aab153`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-06-13T08:54:33.293Z |
-| Total source files | 98 |
-| Files changed in last commit | 3 |
+| Generated | 2026-06-13T09:07:22.626Z |
+| Total source files | 102 |
+| Files changed in last commit | 11 |
 
 ### Changes Since Last Version
 
-- fix: set canonical domain to dj-kimchi.rauell.systems
+- feat: convert to multi-page — 5 indexable routes
+- A: src/app/about/page.tsx
+- A: src/app/bookings/page.tsx
 - M: src/app/layout.tsx
-- M: src/app/robots.ts
+- A: src/app/music/page.tsx
+- M: src/app/page.tsx
 - M: src/app/sitemap.ts
+- A: src/app/videos/page.tsx
+- M: src/components/site/footer.tsx
+- M: src/components/site/hero.tsx
+- M: src/components/site/navigation.tsx
+- M: src/lib/site-data.ts
 
 ## Architecture Summary
 
@@ -48,11 +56,15 @@ dj-kimchi/              Next.js 16 DJ portfolio + booking system
 
 ## Codebase Tree
 
-### Pages (1)
+### Pages (5)
 
 | File | Role | Exports | Core? |
 |------|------|---------|-------|
+| `src/app/about/page.tsx` | page | metadata, AboutPage, default | no |
+| `src/app/bookings/page.tsx` | page | metadata, BookingsPage, default | no |
+| `src/app/music/page.tsx` | page | metadata, MusicPage, default | no |
 | `src/app/page.tsx` | page | HomePage, default | no |
+| `src/app/videos/page.tsx` | page | metadata, VideosPage, default | no |
 
 ### Layouts (1)
 
@@ -198,20 +210,20 @@ Files with the most dependents (most imported):
 | `src/lib/utils` | 44 |
 | `src/lib/site-data` | 8 |
 | `src/components/ui/button` | 6 |
+| `src/components/error-boundary` | 5 |
 | `src/hooks/use-in-view` | 5 |
 | `src/stores/audio-store` | 5 |
 | `src/lib/resend` | 3 |
-| `src/lib/db` | 2 |
-| `src/components/site/navigation` | 2 |
-| `src/components/site/hero` | 2 |
 | `src/components/site/about` | 2 |
-| `src/components/site/music` | 2 |
-| `src/components/site/videos` | 2 |
-| `src/components/site/photos` | 2 |
+| `src/lib/db` | 2 |
 | `src/components/site/bookings` | 2 |
+| `src/components/site/navigation` | 2 |
 | `src/components/site/footer` | 2 |
 | `src/components/site/global-player` | 2 |
 | `src/components/site/page-padding` | 2 |
+| `src/components/site/music` | 2 |
+| `src/components/site/hero` | 2 |
+| `src/components/site/videos` | 2 |
 | `src/components/ui/input` | 2 |
 | `src/components/ui/label` | 2 |
 | `src/hooks/use-toast` | 2 |
@@ -222,7 +234,7 @@ Files with the most dependents (most imported):
 |---------|-----------------|
 | `react` | 56 |
 | `lucide-react` | 30 |
-| `next` | 8 |
+| `next` | 14 |
 | `framer-motion` | 8 |
 | `class-variance-authority` | 8 |
 | `@radix-ui/react-slot` | 5 |
@@ -247,21 +259,21 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
-| `src/app/layout.tsx` | 6 |
-| `docs/.map-state.json` | 6 |
-| `docs/codebase-map.json` | 6 |
-| `docs/codebase-map.md` | 6 |
+| `src/app/layout.tsx` | 7 |
+| `docs/.map-state.json` | 7 |
+| `docs/codebase-map.json` | 7 |
+| `docs/codebase-map.md` | 7 |
 | `README.md` | 6 |
 | `package.json` | 6 |
 | `package-lock.json` | 5 |
 | `src/components/site/music.tsx` | 5 |
+| `src/app/page.tsx` | 4 |
+| `src/app/sitemap.ts` | 3 |
+| `src/components/site/footer.tsx` | 3 |
+| `src/components/site/hero.tsx` | 3 |
+| `src/components/site/navigation.tsx` | 3 |
+| `src/lib/site-data.ts` | 3 |
 | `CLAUDE.md` | 3 |
-| `src/app/page.tsx` | 3 |
-| `src/lib/resend.ts` | 3 |
-| `src/app/api/webhooks/inbound/route.ts` | 3 |
-| `.gitignore` | 3 |
-| `dj-kimchi` | 3 |
-| `src/app/robots.ts` | 2 |
 
 ## Debugging Zones
 
