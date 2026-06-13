@@ -1,5 +1,3 @@
-"use client";
-
 import { ErrorBoundary } from "@/components/error-boundary";
 import { Navigation } from "@/components/site/navigation";
 import { HeroSection } from "@/components/site/hero";
