@@ -7,23 +7,19 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `f6e0a425` (`f6e0a425dc5b`) |
+| Commit | `6cd572f6` (`6cd572f6820f`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-06-13T08:49:07.997Z |
+| Generated | 2026-06-13T08:54:33.293Z |
 | Total source files | 98 |
-| Files changed in last commit | 4 |
+| Files changed in last commit | 3 |
 
 ### Changes Since Last Version
 
-- feat: full SEO implementation — sitemap, robots, JSON-LD, SSR fix
-- M: CLAUDE.md
-- A: public/BingSiteAuth.xml
-- A: public/googlee69e3a7319b06c7f.html
+- fix: set canonical domain to dj-kimchi.rauell.systems
 - M: src/app/layout.tsx
-- M: src/app/page.tsx
-- A: src/app/robots.ts
-- A: src/app/sitemap.ts
+- M: src/app/robots.ts
+- M: src/app/sitemap.ts
 
 ## Architecture Summary
 
@@ -251,12 +247,12 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
+| `src/app/layout.tsx` | 6 |
+| `docs/.map-state.json` | 6 |
+| `docs/codebase-map.json` | 6 |
+| `docs/codebase-map.md` | 6 |
 | `README.md` | 6 |
 | `package.json` | 6 |
-| `src/app/layout.tsx` | 5 |
-| `docs/.map-state.json` | 5 |
-| `docs/codebase-map.json` | 5 |
-| `docs/codebase-map.md` | 5 |
 | `package-lock.json` | 5 |
 | `src/components/site/music.tsx` | 5 |
 | `CLAUDE.md` | 3 |
@@ -265,7 +261,7 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 | `src/app/api/webhooks/inbound/route.ts` | 3 |
 | `.gitignore` | 3 |
 | `dj-kimchi` | 3 |
-| `src/lib/site-data.ts` | 2 |
+| `src/app/robots.ts` | 2 |
 
 ## Debugging Zones
 
