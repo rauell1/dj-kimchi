@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://dj-kimchi.rauell.systems";
+import { BASE_URL } from "@/lib/site-url";
 
 export default function robots(): MetadataRoute.Robots {
   return {

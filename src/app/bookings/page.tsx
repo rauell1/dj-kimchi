@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { BookingsSection } from "@/components/site/bookings";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://dj-kimchi.rauell.systems";
+import { BASE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "Book DJ Kimchi | Hire a DJ in Nairobi Kenya for Events",

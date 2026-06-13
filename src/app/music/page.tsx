@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { MusicSection } from "@/components/site/music";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://dj-kimchi.rauell.systems";
+import { BASE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "DJ Kimchi Mixes | Afrobeats, Amapiano & Gengetone Mixes Nairobi",
