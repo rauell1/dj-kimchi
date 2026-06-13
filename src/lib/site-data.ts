@@ -69,11 +69,11 @@ export interface Feature {
 /* ------------------------------------------------------------------ */
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Music", href: "#music" },
-  { label: "Videos", href: "#videos" },
-  { label: "Book", href: "#bookings" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Music", href: "/music" },
+  { label: "Videos", href: "/videos" },
+  { label: "Book", href: "/bookings" },
 ];
 
 export const MIXES: Mix[] = [

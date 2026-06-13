@@ -4,6 +4,10 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
+import { Navigation } from "@/components/site/navigation";
+import { Footer } from "@/components/site/footer";
+import { GlobalPlayer } from "@/components/site/global-player";
+import { PagePadding } from "@/components/site/page-padding";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://dj-kimchi.rauell.systems";
@@ -146,7 +150,14 @@ export default function RootLayout({
           enableSystem={false}
           storageKey="dj-kimchi-theme"
         >
-          {children}
+          <PagePadding>
+            <div className="min-h-screen bg-background text-foreground overflow-x-hidden w-full max-w-[100vw]">
+              <Navigation />
+              {children}
+              <Footer />
+            </div>
+            <GlobalPlayer />
+          </PagePadding>
           <Toaster />
           <Analytics />
         </ThemeProvider>

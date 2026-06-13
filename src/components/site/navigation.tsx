@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import { NAV_LINKS } from "@/lib/site-data";
 
 export function Navigation() {
@@ -40,7 +41,7 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <a href="#hero" className="flex items-center gap-2 group">
+            <Link href="/" className="flex items-center gap-2 group">
               <div className="flex items-end gap-0.5 h-6">
                 <div className="w-1 bg-purple-500 rounded-full eq-bar-1" />
                 <div className="w-1 bg-cyan-400 rounded-full eq-bar-2" />
@@ -51,19 +52,19 @@ export function Navigation() {
               <span className="text-xl sm:text-2xl font-black tracking-tighter gradient-text group-hover:opacity-80 transition-opacity">
                 DJ KIMCHI
               </span>
-            </a>
+            </Link>
 
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-1">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400 group-hover:w-full transition-all duration-300" />
-                </a>
+                </Link>
               ))}
               <button
                 type="button"
@@ -80,12 +81,12 @@ export function Navigation() {
                   {mounted ? (isDark ? "Light mode" : "Dark mode") : "Theme"}
                 </span>
               </button>
-              <a
-                href="#bookings"
+              <Link
+                href="/bookings"
                 className="ml-4 px-5 py-2 bg-gradient-to-r from-kenya-red to-purple-600 text-white text-sm font-bold rounded-full btn-glow-red"
               >
                 Book Now
-              </a>
+              </Link>
             </div>
 
             {/* Mobile toggle */}
@@ -124,14 +125,14 @@ export function Navigation() {
           >
             <div className="flex flex-col items-center justify-center h-full gap-6 px-4">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="text-2xl font-bold text-foreground hover:text-purple-500 transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <button
                 type="button"
@@ -146,13 +147,13 @@ export function Navigation() {
                 )}
                 <span>{mounted ? (isDark ? "Light mode" : "Dark mode") : "Theme"}</span>
               </button>
-              <a
-                href="#bookings"
+              <Link
+                href="/bookings"
                 onClick={() => setMobileOpen(false)}
                 className="px-8 py-3 bg-gradient-to-r from-kenya-red to-purple-600 text-white font-bold rounded-full btn-glow-red"
               >
                 Book DJ Kimchi
-              </a>
+              </Link>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="absolute top-5 right-5 p-2 text-foreground"

@@ -101,14 +101,14 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row gap-4"
         >
           <a
-            href="#music"
+            href="/music"
             className="group flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 bg-gradient-to-r from-kenya-red to-purple-600 text-white font-bold rounded-full btn-glow-red"
           >
             <Headphones className="w-5 h-5 group-hover:animate-pulse" />
             Listen Now
           </a>
           <a
-            href="#bookings"
+            href="/bookings"
             className="group flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 border-2 border-kenya-green/40 text-kenya-green font-bold rounded-full hover:bg-kenya-green/10 hover:border-kenya-green/70 btn-glow-green"
           >
             <Calendar className="w-5 h-5" />
@@ -141,10 +141,10 @@ export function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 animate-scroll-bounce z-10">
         <a
-          href="#about"
+          href="/about"
           className="flex flex-col items-center gap-2 text-foreground/40 hover:text-foreground/70 transition-colors"
         >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-xs tracking-widest uppercase">Explore</span>
           <ChevronDown className="w-5 h-5" />
         </a>
       </div>
