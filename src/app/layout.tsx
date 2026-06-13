@@ -9,8 +9,16 @@ import { Footer } from "@/components/site/footer";
 import { GlobalPlayer } from "@/components/site/global-player";
 import { PagePadding } from "@/components/site/page-padding";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://dj-kimchi.rauell.systems";
+const FALLBACK_URL = "https://dj-kimchi.rauell.systems";
+const BASE_URL = (() => {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+  try {
+    new URL(raw);
+    return raw;
+  } catch {
+    return FALLBACK_URL;
+  }
+})();
 
 const jsonLd = {
   "@context": "https://schema.org",
