@@ -7,24 +7,16 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `eca726bb` (`eca726bb6c12`) |
+| Commit | `f97cd781` (`f97cd781efbd`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-06-13T09:22:52.038Z |
-| Total source files | 103 |
-| Files changed in last commit | 8 |
+| Generated | 2026-06-24T20:38:33.687Z |
+| Total source files | 104 |
+| Files changed in last commit | 9 |
 
 ### Changes Since Last Version
 
-- fix: centralise BASE_URL validation to fix invalid sitemap URLs in GSC
-- M: src/app/about/page.tsx
-- M: src/app/bookings/page.tsx
-- M: src/app/layout.tsx
-- M: src/app/music/page.tsx
-- M: src/app/robots.ts
-- M: src/app/sitemap.ts
-- M: src/app/videos/page.tsx
-- A: src/lib/site-url.ts
+- Merge pull request #13 from rauell1/devin/1782323296-ui-polish
 
 ## Architecture Summary
 
@@ -79,7 +71,7 @@ dj-kimchi/              Next.js 16 DJ portfolio + booking system
 | `src/app/api/route.ts` | api-route | GET | ⚠️ yes |
 | `src/app/api/webhooks/inbound/route.ts` | api-route | POST | ⚠️ yes |
 
-### Site Components (12)
+### Site Components (13)
 
 | File | Role | Exports | Core? |
 |------|------|---------|-------|
@@ -94,6 +86,7 @@ dj-kimchi/              Next.js 16 DJ portfolio + booking system
 | `src/components/site/navigation.tsx` | component-site | Navigation | no |
 | `src/components/site/page-padding.tsx` | component-site | PagePadding | no |
 | `src/components/site/photos.tsx` | component-site | PhotosSection | no |
+| `src/components/site/scroll-to-top.tsx` | component-site | ScrollToTop | no |
 | `src/components/site/videos.tsx` | component-site | VideosSection | no |
 
 ### UI Primitives (49)
@@ -209,9 +202,9 @@ Files with the most dependents (most imported):
 | `src/lib/site-data` | 8 |
 | `src/lib/site-url` | 7 |
 | `src/components/ui/button` | 6 |
+| `src/stores/audio-store` | 6 |
 | `src/components/error-boundary` | 5 |
 | `src/hooks/use-in-view` | 5 |
-| `src/stores/audio-store` | 5 |
 | `src/lib/resend` | 3 |
 | `src/components/site/about` | 2 |
 | `src/lib/db` | 2 |
@@ -220,20 +213,20 @@ Files with the most dependents (most imported):
 | `src/components/site/footer` | 2 |
 | `src/components/site/global-player` | 2 |
 | `src/components/site/page-padding` | 2 |
+| `src/components/site/scroll-to-top` | 2 |
 | `src/components/site/music` | 2 |
 | `src/components/site/hero` | 2 |
 | `src/components/site/videos` | 2 |
 | `src/components/ui/input` | 2 |
-| `src/components/ui/label` | 2 |
 
 ### Top External Packages
 
 | Package | Used in N files |
 |---------|-----------------|
-| `react` | 56 |
-| `lucide-react` | 30 |
+| `react` | 57 |
+| `lucide-react` | 31 |
 | `next` | 14 |
-| `framer-motion` | 8 |
+| `framer-motion` | 9 |
 | `class-variance-authority` | 8 |
 | `@radix-ui/react-slot` | 5 |
 | `next-themes` | 3 |
@@ -257,21 +250,21 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
-| `src/app/layout.tsx` | 9 |
-| `docs/.map-state.json` | 9 |
-| `docs/codebase-map.json` | 9 |
-| `docs/codebase-map.md` | 9 |
+| `src/app/layout.tsx` | 10 |
+| `docs/.map-state.json` | 10 |
+| `docs/codebase-map.json` | 10 |
+| `docs/codebase-map.md` | 10 |
+| `src/components/site/music.tsx` | 6 |
 | `README.md` | 6 |
 | `package.json` | 6 |
 | `package-lock.json` | 5 |
-| `src/components/site/music.tsx` | 5 |
+| `src/components/site/navigation.tsx` | 4 |
 | `src/app/sitemap.ts` | 4 |
 | `.gitignore` | 4 |
 | `src/app/page.tsx` | 4 |
-| `src/app/robots.ts` | 3 |
-| `src/components/site/footer.tsx` | 3 |
-| `src/components/site/hero.tsx` | 3 |
-| `src/components/site/navigation.tsx` | 3 |
+| `src/app/globals.css` | 3 |
+| `src/components/site/global-player.tsx` | 3 |
+| `src/components/site/photos.tsx` | 3 |
 
 ## Debugging Zones
 

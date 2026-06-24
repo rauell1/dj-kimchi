@@ -1,25 +1,17 @@
 {
   "meta": {
-    "version": "eca726bb",
-    "commitHash": "eca726bb6c128be0579bdfc1865be7a08e9297a6",
+    "version": "f97cd781",
+    "commitHash": "f97cd781efbdeb06928a7fb12e8e89fd9b55e855",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-06-13T09:22:52.038Z",
+    "timestamp": "2026-06-24T20:38:33.687Z",
     "summary": [
-      "fix: centralise BASE_URL validation to fix invalid sitemap URLs in GSC",
-      "M: src/app/about/page.tsx",
-      "M: src/app/bookings/page.tsx",
-      "M: src/app/layout.tsx",
-      "M: src/app/music/page.tsx",
-      "M: src/app/robots.ts",
-      "M: src/app/sitemap.ts",
-      "M: src/app/videos/page.tsx",
-      "A: src/lib/site-url.ts"
+      "Merge pull request #13 from rauell1/devin/1782323296-ui-polish"
     ]
   },
   "stats": {
-    "totalFiles": 103,
-    "changedFiles": 8,
+    "totalFiles": 104,
+    "changedFiles": 9,
     "coreFiles": 9
   },
   "layers": {
@@ -45,7 +37,7 @@
         },
         "isCore": false,
         "hash": "81a1c0846badc1b4",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/app/bookings/page.tsx",
@@ -68,7 +60,7 @@
         },
         "isCore": false,
         "hash": "825488de14b931ba",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/app/music/page.tsx",
@@ -91,7 +83,7 @@
         },
         "isCore": false,
         "hash": "ca49100fe4b1eb8a",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/app/page.tsx",
@@ -133,7 +125,7 @@
         },
         "isCore": false,
         "hash": "3e9eab7e45f6a536",
-        "changed": true
+        "changed": false
       }
     ],
     "layouts": [
@@ -155,6 +147,7 @@
             "src/components/site/footer",
             "src/components/site/global-player",
             "src/components/site/page-padding",
+            "src/components/site/scroll-to-top",
             "src/lib/site-url"
           ],
           "external": [
@@ -163,7 +156,7 @@
           ]
         },
         "isCore": false,
-        "hash": "f85b746f5b7bc343",
+        "hash": "b07655c2cae13def",
         "changed": true
       }
     ],
@@ -357,8 +350,8 @@
           ]
         },
         "isCore": false,
-        "hash": "54fc98edf61f7eaa",
-        "changed": false
+        "hash": "89e38dc9abf59dfd",
+        "changed": true
       },
       {
         "path": "src/components/site/hero.tsx",
@@ -397,13 +390,14 @@
             "src/components/site/footer",
             "src/components/site/global-player",
             "src/components/site/page-padding",
+            "src/components/site/scroll-to-top",
             "src/components/site/lazy-youtube"
           ],
           "external": []
         },
         "isCore": false,
-        "hash": "3e26015de4c36e06",
-        "changed": false
+        "hash": "2e92c86de024eda1",
+        "changed": true
       },
       {
         "path": "src/components/site/lazy-youtube.tsx",
@@ -443,8 +437,8 @@
           ]
         },
         "isCore": false,
-        "hash": "f4948fd51a63b129",
-        "changed": false
+        "hash": "1343c0004d5421ef",
+        "changed": true
       },
       {
         "path": "src/components/site/navigation.tsx",
@@ -466,8 +460,8 @@
           ]
         },
         "isCore": false,
-        "hash": "8c7d2525b14da088",
-        "changed": false
+        "hash": "18ca705ee5d0a60c",
+        "changed": true
       },
       {
         "path": "src/components/site/page-padding.tsx",
@@ -507,8 +501,29 @@
           ]
         },
         "isCore": false,
-        "hash": "3b1e77702ec9d91c",
-        "changed": false
+        "hash": "552834ca5d55904a",
+        "changed": true
+      },
+      {
+        "path": "src/components/site/scroll-to-top.tsx",
+        "alias": "@/components/site/scroll-to-top.tsx",
+        "role": "component-site",
+        "exports": [
+          "ScrollToTop"
+        ],
+        "imports": {
+          "internal": [
+            "src/stores/audio-store"
+          ],
+          "external": [
+            "react",
+            "framer-motion",
+            "lucide-react"
+          ]
+        },
+        "isCore": false,
+        "hash": "d9e789fc5c1d8490",
+        "changed": true
       },
       {
         "path": "src/components/site/videos.tsx",
@@ -531,8 +546,8 @@
           ]
         },
         "isCore": false,
-        "hash": "ed06d6d5145c10a2",
-        "changed": false
+        "hash": "91138e2ba4c06310",
+        "changed": true
       }
     ],
     "componentsUi": [
@@ -1697,7 +1712,7 @@
         },
         "isCore": false,
         "hash": "d7718842752341b8",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/lib/utils.ts",
@@ -1766,6 +1781,7 @@
         "src/components/site/footer",
         "src/components/site/global-player",
         "src/components/site/page-padding",
+        "src/components/site/scroll-to-top",
         "src/lib/site-url"
       ],
       "src/app/loading.tsx": [],
@@ -1824,6 +1840,7 @@
         "src/components/site/footer",
         "src/components/site/global-player",
         "src/components/site/page-padding",
+        "src/components/site/scroll-to-top",
         "src/components/site/lazy-youtube"
       ],
       "src/components/site/lazy-youtube.tsx": [],
@@ -1842,6 +1859,9 @@
         "src/hooks/use-in-view",
         "src/lib/site-data",
         "src/components/ui/protected-image"
+      ],
+      "src/components/site/scroll-to-top.tsx": [
+        "src/stores/audio-store"
       ],
       "src/components/site/videos.tsx": [
         "src/hooks/use-in-view",
@@ -2084,6 +2104,10 @@
         "src/app/layout.tsx",
         "src/components/site/index.ts"
       ],
+      "src/components/site/scroll-to-top": [
+        "src/app/layout.tsx",
+        "src/components/site/index.ts"
+      ],
       "src/components/site/music": [
         "src/app/music/page.tsx",
         "src/components/site/index.ts"
@@ -2143,6 +2167,7 @@
         "src/components/site/global-player.tsx",
         "src/components/site/music.tsx",
         "src/components/site/page-padding.tsx",
+        "src/components/site/scroll-to-top.tsx",
         "src/components/site/videos.tsx",
         "src/hooks/use-media-session.ts"
       ],
@@ -2231,11 +2256,11 @@
     "externalPackages": [
       {
         "pkg": "react",
-        "usages": 56
+        "usages": 57
       },
       {
         "pkg": "lucide-react",
-        "usages": 30
+        "usages": 31
       },
       {
         "pkg": "next",
@@ -2243,7 +2268,7 @@
       },
       {
         "pkg": "framer-motion",
-        "usages": 8
+        "usages": 9
       },
       {
         "pkg": "class-variance-authority",
@@ -2450,19 +2475,23 @@
   "hotspots": [
     {
       "file": "src/app/layout.tsx",
-      "commitCount": 9
+      "commitCount": 10
     },
     {
       "file": "docs/.map-state.json",
-      "commitCount": 9
+      "commitCount": 10
     },
     {
       "file": "docs/codebase-map.json",
-      "commitCount": 9
+      "commitCount": 10
     },
     {
       "file": "docs/codebase-map.md",
-      "commitCount": 9
+      "commitCount": 10
+    },
+    {
+      "file": "src/components/site/music.tsx",
+      "commitCount": 6
     },
     {
       "file": "README.md",
@@ -2477,8 +2506,8 @@
       "commitCount": 5
     },
     {
-      "file": "src/components/site/music.tsx",
-      "commitCount": 5
+      "file": "src/components/site/navigation.tsx",
+      "commitCount": 4
     },
     {
       "file": "src/app/sitemap.ts",
@@ -2493,31 +2522,28 @@
       "commitCount": 4
     },
     {
-      "file": "src/app/robots.ts",
+      "file": "src/app/globals.css",
       "commitCount": 3
     },
     {
-      "file": "src/components/site/footer.tsx",
+      "file": "src/components/site/global-player.tsx",
       "commitCount": 3
     },
     {
-      "file": "src/components/site/hero.tsx",
-      "commitCount": 3
-    },
-    {
-      "file": "src/components/site/navigation.tsx",
+      "file": "src/components/site/photos.tsx",
       "commitCount": 3
     }
   ],
   "riskFlags": [],
   "changedFiles": [
-    "src/app/about/page.tsx",
-    "src/app/bookings/page.tsx",
+    "src/app/globals.css",
     "src/app/layout.tsx",
-    "src/app/music/page.tsx",
-    "src/app/robots.ts",
-    "src/app/sitemap.ts",
-    "src/app/videos/page.tsx",
-    "src/lib/site-url.ts"
+    "src/components/site/global-player.tsx",
+    "src/components/site/index.ts",
+    "src/components/site/music.tsx",
+    "src/components/site/navigation.tsx",
+    "src/components/site/photos.tsx",
+    "src/components/site/scroll-to-top.tsx",
+    "src/components/site/videos.tsx"
   ]
 }
