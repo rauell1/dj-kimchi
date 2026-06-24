@@ -30,7 +30,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           transition={{ duration: 0.25 }}
           aria-label="Scroll to top"
-          className={`fixed right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-kenya-red to-purple-600 text-white shadow-lg shadow-purple-500/30 btn-glow-red ${
+          className={`fixed right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-kenya-red to-purple-600 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:scale-110 transition-all ${
             currentTrack ? "bottom-24" : "bottom-6"
           }`}
         >
