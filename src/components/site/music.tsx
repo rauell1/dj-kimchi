@@ -130,7 +130,7 @@ export function MusicSection() {
                   initial={{ opacity: 0, y: 40 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-                  className={`group relative rounded-2xl overflow-hidden bg-[#0a0a0a] border transition-all duration-500 mix-card-hover w-[82vw] flex-shrink-0 snap-center sm:w-auto sm:max-w-none sm:snap-start ${isActive ? "border-purple-500/60 shadow-[0_0_24px_rgba(168,85,247,0.15)]" : "border-white/[0.06] hover:border-kenya-red/40"}`}
+                  className={`group relative rounded-2xl overflow-hidden bg-card border transition-all duration-500 mix-card-hover w-[82vw] flex-shrink-0 snap-center sm:w-auto sm:max-w-none sm:snap-start ${isActive ? "border-purple-500/60 shadow-[0_0_24px_rgba(168,85,247,0.15)]" : "border-border hover:border-kenya-red/40"}`}
                 >
                   {/* Cover art */}
                   <div className="relative aspect-square overflow-hidden">
@@ -140,7 +140,7 @@ export function MusicSection() {
                       className="w-full h-full object-cover transition-transform duration-700 mix-cover-img"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
 
                     {/* Active indicator glow */}
                     {isActive && (
@@ -188,7 +188,7 @@ export function MusicSection() {
 
                   {/* Info */}
                   <div className="p-5">
-                    <h3 className={`text-lg font-bold break-words mb-1 transition-colors ${isActive ? "text-purple-300" : "text-white group-hover:text-purple-300"}`}>
+                    <h3 className={`text-lg font-bold break-words mb-1 transition-colors ${isActive ? "text-purple-300" : "text-card-foreground group-hover:text-purple-300"}`}>
                       {mix.title}
                     </h3>
                     <p className="text-xs font-semibold text-kenya-green/70 uppercase tracking-wider mb-2">{mix.subtitle}</p>
@@ -261,7 +261,7 @@ export function MusicSection() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 1.0 + i * 0.1 }}
-                    className={`group relative rounded-2xl overflow-hidden bg-[#0a0a0a] border transition-all duration-500 mix-card-hover w-[82vw] flex-shrink-0 snap-center sm:w-auto sm:max-w-none sm:snap-start ${isActive ? "border-kenya-green/60 shadow-[0_0_24px_rgba(39,174,96,0.15)]" : "border-white/[0.06] hover:border-kenya-green/40"}`}
+                    className={`group relative rounded-2xl overflow-hidden bg-card border transition-all duration-500 mix-card-hover w-[82vw] flex-shrink-0 snap-center sm:w-auto sm:max-w-none sm:snap-start ${isActive ? "border-kenya-green/60 shadow-[0_0_24px_rgba(39,174,96,0.15)]" : "border-border hover:border-kenya-green/40"}`}
                   >
                     <div className="relative aspect-square overflow-hidden">
                       <img
@@ -270,7 +270,7 @@ export function MusicSection() {
                         className="w-full h-full object-cover transition-transform duration-700 mix-cover-img"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
 
                       {isActive && (
                         <div className="absolute inset-0 bg-kenya-green/10 flex items-center justify-center">
@@ -313,7 +313,7 @@ export function MusicSection() {
                     </div>
 
                     <div className="p-5">
-                      <h3 className={`text-lg font-bold break-words mb-1 transition-colors ${isActive ? "text-kenya-green" : "text-white group-hover:text-kenya-green"}`}>
+                      <h3 className={`text-lg font-bold break-words mb-1 transition-colors ${isActive ? "text-kenya-green" : "text-card-foreground group-hover:text-kenya-green"}`}>
                         {ht.title}
                       </h3>
                       <p className="text-xs font-semibold text-kenya-green/70 uppercase tracking-wider mb-2">{ht.subtitle}</p>

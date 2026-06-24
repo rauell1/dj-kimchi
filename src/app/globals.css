@@ -544,7 +544,7 @@
 /* Video card smooth border glow */
 .video-card-glow {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
 }
 .video-card-glow:hover {
   border-color: rgba(192,57,43,0.3);

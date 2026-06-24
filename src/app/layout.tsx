@@ -8,6 +8,7 @@ import { Navigation } from "@/components/site/navigation";
 import { Footer } from "@/components/site/footer";
 import { GlobalPlayer } from "@/components/site/global-player";
 import { PagePadding } from "@/components/site/page-padding";
+import { ScrollToTop } from "@/components/site/scroll-to-top";
 import { BASE_URL } from "@/lib/site-url";
 
 const jsonLd = {
@@ -155,6 +156,7 @@ export default function RootLayout({
               <Footer />
             </div>
             <GlobalPlayer />
+            <ScrollToTop />
           </PagePadding>
           <Toaster />
           <Analytics />
