@@ -8,4 +8,5 @@ export { PhotosSection } from "./photos";
 export { Footer } from "./footer";
 export { GlobalPlayer } from "./global-player";
 export { PagePadding } from "./page-padding";
+export { ScrollToTop } from "./scroll-to-top";
 export { LazyYoutube } from "./lazy-youtube";

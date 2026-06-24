@@ -47,12 +47,12 @@ export function VideosSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mb-8"
         >
-          <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl shadow-purple-500/5 glow-kenya-dual">
+          <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl shadow-purple-500/5 glow-kenya-dual">
             <div className="aspect-video" onClick={handleVideoPlay}>
               <LazyYoutube videoId={FEATURED_VIDEO.id} title={FEATURED_VIDEO.title} />
             </div>
           </div>
-          <h3 className="text-base sm:text-lg font-bold text-white mt-4 line-clamp-2">
+          <h3 className="text-base sm:text-lg font-bold text-card-foreground mt-4 line-clamp-2">
             {FEATURED_VIDEO.title}
           </h3>
         </motion.div>
@@ -70,13 +70,13 @@ export function VideosSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-              className="group rounded-xl overflow-hidden border border-white/[0.06] bg-[#0a0a0a] video-card-glow min-w-[260px] max-w-[320px] flex-shrink-0 snap-start sm:min-w-0 sm:max-w-none"
+              className="group rounded-xl overflow-hidden border border-border bg-card video-card-glow min-w-[260px] max-w-[320px] flex-shrink-0 snap-start sm:min-w-0 sm:max-w-none"
             >
               <div className="relative aspect-video" onClick={handleVideoPlay}>
                 <LazyYoutube videoId={video.id} title={video.title} />
               </div>
               <div className="p-3">
-                <h4 className="text-sm font-medium text-white/80 line-clamp-1">{video.title}</h4>
+                <h4 className="text-sm font-medium text-card-foreground/80 line-clamp-1">{video.title}</h4>
               </div>
             </motion.div>
           ))}

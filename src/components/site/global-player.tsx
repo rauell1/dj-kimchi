@@ -600,7 +600,7 @@ export function GlobalPlayer() {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-0 left-0 right-0 z-50"
         >
-          <div className="glass border-t border-white/[0.08] shadow-[0_-8px_32px_rgba(0,0,0,0.5)]">
+          <div className="bg-neutral-950/85 backdrop-blur-xl border-t border-white/[0.08] shadow-[0_-8px_32px_rgba(0,0,0,0.5)]">
             <PlayerBar />
           </div>
         </motion.div>

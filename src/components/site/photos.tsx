@@ -42,7 +42,7 @@ export function PhotosSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="group rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/[0.06] hover:border-purple-500/30 transition-all duration-500 card-hover"
+              className="group rounded-2xl overflow-hidden bg-card border border-border hover:border-purple-500/30 transition-all duration-500 card-hover"
             >
               {/* Image (protected — not downloadable) */}
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -51,7 +51,7 @@ export function PhotosSection() {
                   alt={photo.alt}
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 {/* Camera icon overlay */}
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -63,7 +63,7 @@ export function PhotosSection() {
 
               {/* Caption */}
               <div className="p-4">
-                <p className="text-sm font-semibold text-white/80 group-hover:text-purple-300 transition-colors text-center">
+                <p className="text-sm font-semibold text-card-foreground/80 group-hover:text-purple-300 transition-colors text-center">
                   {photo.caption}
                 </p>
               </div>

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/lib/site-data";
 
 export function Navigation() {
@@ -12,6 +13,10 @@ export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted] = useState(() => typeof window !== "undefined");
   const { setTheme, resolvedTheme } = useTheme();
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
@@ -56,16 +61,26 @@ export function Navigation() {
 
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-1">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400 group-hover:w-full transition-all duration-300" />
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`px-3 py-2 text-sm font-medium transition-colors duration-300 relative group ${
+                      active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400 transition-all duration-300 ${
+                        active ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
               <button
                 type="button"
                 onClick={toggleTheme}
@@ -124,16 +139,24 @@ export function Navigation() {
             className="fixed inset-0 z-40 glass md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full gap-6 px-4">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-2xl font-bold text-foreground hover:text-purple-500 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`text-2xl font-bold transition-colors ${
+                      active
+                        ? "gradient-text"
+                        : "text-foreground hover:text-purple-500"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <button
                 type="button"
                 onClick={toggleTheme}
