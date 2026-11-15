@@ -5,7 +5,7 @@
 **What it is:** Official website for DJ Kimchi — Nairobi-based DJ specialising in Afrobeats, Amapiano, Gengetone, and Dancehall.
 **Framework:** Next.js 16 App Router — React 19, TypeScript, Tailwind v4, Shadcn/ui
 **Package manager:** Bun (use `bun install`, `bun run dev`, `bun run build`)
-**Deployed:** Vercel. Set `NEXT_PUBLIC_SITE_URL` in Vercel env vars to the production domain.
+**Deployed:** Cloudflare Workers via the OpenNext adapter (`open-next.config.ts`, `wrangler.jsonc`); `.github/workflows/deploy-cloudflare.yml` deploys on push to `main`. Set `NEXT_PUBLIC_SITE_URL` as a GitHub repository variable (read at build time) and `RESEND_API_KEY` as a Worker secret. The Prisma/SQLite booking store stays disabled in production (no `DATABASE_URL`); bookings are delivered by email.
 **Repo:** https://github.com/rauell1/dj-kimchi.git
 
 ---
