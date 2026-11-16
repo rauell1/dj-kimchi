@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      # The OpenNext build runs the project's package manager, which the
+      # bun.lock file marks as Bun.
+      - uses: oven-sh/setup-bun@v2
       - run: npm ci
       - name: Build for Cloudflare
         run: npx opennextjs-cloudflare build
