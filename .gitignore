@@ -75,3 +75,8 @@ __pycache__/
 /safaricharge-website/
 /dj-kimchi/
 .vercel
+
+# Cloudflare (OpenNext build output, Wrangler state, local secrets)
+/.open-next/
+/.wrangler/
+.dev.vars
