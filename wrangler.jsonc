@@ -9,5 +9,9 @@
   "keep_vars": true,
   "workers_dev": true,
   "routes": [{ "pattern": "dj-kimchi.rauell.systems", "custom_domain": true }],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Page cache for open-next.config.ts.
+  "kv_namespaces": [
+    { "binding": "NEXT_INC_CACHE_KV", "id": "37d05be013ea4582b9a132d75e9b398b" }
+  ]
 }
