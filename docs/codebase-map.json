@@ -1,17 +1,17 @@
 {
   "meta": {
-    "version": "f97cd781",
-    "commitHash": "f97cd781efbdeb06928a7fb12e8e89fd9b55e855",
+    "version": "b568d98c",
+    "commitHash": "b568d98cffa06dab1497ee3b8d62a051189d2654",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-06-24T20:38:33.687Z",
+    "timestamp": "2026-11-16T17:34:19.309Z",
     "summary": [
-      "Merge pull request #13 from rauell1/devin/1782323296-ui-polish"
+      "Merge pull request #19 from rauell1/ccr-9438a301-d79y8x"
     ]
   },
   "stats": {
-    "totalFiles": 104,
-    "changedFiles": 9,
+    "totalFiles": 105,
+    "changedFiles": 3,
     "coreFiles": 9
   },
   "layers": {
@@ -151,12 +151,11 @@
             "src/lib/site-url"
           ],
           "external": [
-            "next",
-            "@vercel/analytics"
+            "next"
           ]
         },
         "isCore": false,
-        "hash": "b07655c2cae13def",
+        "hash": "d8843d1a5a776177",
         "changed": true
       }
     ],
@@ -351,7 +350,7 @@
         },
         "isCore": false,
         "hash": "89e38dc9abf59dfd",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/hero.tsx",
@@ -397,7 +396,7 @@
         },
         "isCore": false,
         "hash": "2e92c86de024eda1",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/lazy-youtube.tsx",
@@ -438,7 +437,7 @@
         },
         "isCore": false,
         "hash": "1343c0004d5421ef",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/navigation.tsx",
@@ -461,7 +460,7 @@
         },
         "isCore": false,
         "hash": "18ca705ee5d0a60c",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/page-padding.tsx",
@@ -502,7 +501,7 @@
         },
         "isCore": false,
         "hash": "552834ca5d55904a",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/scroll-to-top.tsx",
@@ -523,7 +522,7 @@
         },
         "isCore": false,
         "hash": "d9e789fc5c1d8490",
-        "changed": true
+        "changed": false
       },
       {
         "path": "src/components/site/videos.tsx",
@@ -547,7 +546,7 @@
         },
         "isCore": false,
         "hash": "91138e2ba4c06310",
-        "changed": true
+        "changed": false
       }
     ],
     "componentsUi": [
@@ -1741,6 +1740,7 @@
       "examples/websocket/server.ts": [],
       "keep-alive.mjs": [],
       "next.config.ts": [],
+      "open-next.config.ts": [],
       "postcss.config.mjs": [],
       "scripts/generate-architecture-map.mjs": [],
       "scripts/generate-codebase-map.mjs": [],
@@ -2315,10 +2315,6 @@
         "usages": 1
       },
       {
-        "pkg": "@vercel/analytics",
-        "usages": 1
-      },
-      {
         "pkg": "@radix-ui/react-accordion",
         "usages": 1
       },
@@ -2475,34 +2471,42 @@
   "hotspots": [
     {
       "file": "src/app/layout.tsx",
-      "commitCount": 10
+      "commitCount": 11
     },
     {
       "file": "docs/.map-state.json",
-      "commitCount": 10
+      "commitCount": 11
     },
     {
       "file": "docs/codebase-map.json",
-      "commitCount": 10
+      "commitCount": 11
     },
     {
       "file": "docs/codebase-map.md",
-      "commitCount": 10
+      "commitCount": 11
+    },
+    {
+      "file": "package.json",
+      "commitCount": 8
+    },
+    {
+      "file": "package-lock.json",
+      "commitCount": 7
+    },
+    {
+      "file": "README.md",
+      "commitCount": 7
     },
     {
       "file": "src/components/site/music.tsx",
       "commitCount": 6
     },
     {
-      "file": "README.md",
-      "commitCount": 6
+      "file": ".gitignore",
+      "commitCount": 5
     },
     {
-      "file": "package.json",
-      "commitCount": 6
-    },
-    {
-      "file": "package-lock.json",
+      "file": "CLAUDE.md",
       "commitCount": 5
     },
     {
@@ -2514,36 +2518,22 @@
       "commitCount": 4
     },
     {
-      "file": ".gitignore",
-      "commitCount": 4
-    },
-    {
       "file": "src/app/page.tsx",
       "commitCount": 4
     },
     {
-      "file": "src/app/globals.css",
+      "file": ".github/workflows/deploy-cloudflare.yml",
       "commitCount": 3
     },
     {
-      "file": "src/components/site/global-player.tsx",
-      "commitCount": 3
-    },
-    {
-      "file": "src/components/site/photos.tsx",
+      "file": "wrangler.jsonc",
       "commitCount": 3
     }
   ],
   "riskFlags": [],
   "changedFiles": [
-    "src/app/globals.css",
-    "src/app/layout.tsx",
-    "src/components/site/global-player.tsx",
-    "src/components/site/index.ts",
-    "src/components/site/music.tsx",
-    "src/components/site/navigation.tsx",
-    "src/components/site/photos.tsx",
-    "src/components/site/scroll-to-top.tsx",
-    "src/components/site/videos.tsx"
+    "eslint.config.mjs",
+    "open-next.config.ts",
+    "src/app/layout.tsx"
   ]
 }

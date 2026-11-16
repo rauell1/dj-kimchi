@@ -7,16 +7,16 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `f97cd781` (`f97cd781efbd`) |
+| Commit | `b568d98c` (`b568d98cffa0`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-06-24T20:38:33.687Z |
-| Total source files | 104 |
-| Files changed in last commit | 9 |
+| Generated | 2026-11-16T17:34:19.309Z |
+| Total source files | 105 |
+| Files changed in last commit | 3 |
 
 ### Changes Since Last Version
 
-- Merge pull request #13 from rauell1/devin/1782323296-ui-polish
+- Merge pull request #19 from rauell1/ccr-9438a301-d79y8x
 
 ## Architecture Summary
 
@@ -238,11 +238,11 @@ Files with the most dependents (most imported):
 | `util` | 1 |
 | `path` | 1 |
 | `svix` | 1 |
-| `@vercel/analytics` | 1 |
 | `@radix-ui/react-accordion` | 1 |
 | `@radix-ui/react-alert-dialog` | 1 |
 | `@radix-ui/react-aspect-ratio` | 1 |
 | `@radix-ui/react-avatar` | 1 |
+| `react-day-picker` | 1 |
 
 ## Hotspots (Frequently Modified Files)
 
@@ -250,21 +250,21 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
-| `src/app/layout.tsx` | 10 |
-| `docs/.map-state.json` | 10 |
-| `docs/codebase-map.json` | 10 |
-| `docs/codebase-map.md` | 10 |
+| `src/app/layout.tsx` | 11 |
+| `docs/.map-state.json` | 11 |
+| `docs/codebase-map.json` | 11 |
+| `docs/codebase-map.md` | 11 |
+| `package.json` | 8 |
+| `package-lock.json` | 7 |
+| `README.md` | 7 |
 | `src/components/site/music.tsx` | 6 |
-| `README.md` | 6 |
-| `package.json` | 6 |
-| `package-lock.json` | 5 |
+| `.gitignore` | 5 |
+| `CLAUDE.md` | 5 |
 | `src/components/site/navigation.tsx` | 4 |
 | `src/app/sitemap.ts` | 4 |
-| `.gitignore` | 4 |
 | `src/app/page.tsx` | 4 |
-| `src/app/globals.css` | 3 |
-| `src/components/site/global-player.tsx` | 3 |
-| `src/components/site/photos.tsx` | 3 |
+| `.github/workflows/deploy-cloudflare.yml` | 3 |
+| `wrangler.jsonc` | 3 |
 
 ## Debugging Zones
 

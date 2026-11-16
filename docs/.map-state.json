@@ -1,10 +1,11 @@
 {
   "hashes": {
-    "eslint.config.mjs": "bd7adc9b35e2c723",
+    "eslint.config.mjs": "d1a8deacd7a85b3c",
     "examples/websocket/frontend.tsx": "2b186756c26cc54f",
     "examples/websocket/server.ts": "50881b769ec938af",
     "keep-alive.mjs": "0a5561453ef1446d",
     "next.config.ts": "769d79cd37299228",
+    "open-next.config.ts": "efe6bddf2422dec5",
     "postcss.config.mjs": "141ef24ca27a99d0",
     "prisma/schema.prisma": "7d7f7c0fc33bff4d",
     "scripts/generate-architecture-map.mjs": "8d15688879af68fc",
@@ -22,7 +23,7 @@
     "src/app/api/webhooks/inbound/route.ts": "7c0e33310ec486e4",
     "src/app/bookings/page.tsx": "825488de14b931ba",
     "src/app/globals.css": "c34831246dc181f6",
-    "src/app/layout.tsx": "b07655c2cae13def",
+    "src/app/layout.tsx": "d8843d1a5a776177",
     "src/app/loading.tsx": "79393b3cda0d28b8",
     "src/app/music/page.tsx": "ca49100fe4b1eb8a",
     "src/app/page.tsx": "911fb91bd75259f9",
@@ -107,5 +108,5 @@
     "src/stores/audio-store.ts": "a98f1f62646dba7f",
     "tailwind.config.ts": "ade682235e52f45b"
   },
-  "lastCommit": "f97cd781efbdeb06928a7fb12e8e89fd9b55e855"
+  "lastCommit": "b568d98cffa06dab1497ee3b8d62a051189d2654"
 }
