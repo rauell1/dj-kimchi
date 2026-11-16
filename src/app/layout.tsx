@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Analytics } from "@vercel/analytics/next";
 import { Navigation } from "@/components/site/navigation";
 import { Footer } from "@/components/site/footer";
 import { GlobalPlayer } from "@/components/site/global-player";
@@ -159,7 +158,6 @@ export default function RootLayout({
             <ScrollToTop />
           </PagePadding>
           <Toaster />
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
