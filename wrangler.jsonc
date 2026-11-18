@@ -14,8 +14,9 @@
   "workers_dev": true,
   "routes": [{ "pattern": "dj-kimchi.rauell.systems", "custom_domain": true }],
   "observability": { "enabled": true },
-  // Page cache for open-next.config.ts.
-  "kv_namespaces": [
-    { "binding": "NEXT_INC_CACHE_KV", "id": "37d05be013ea4582b9a132d75e9b398b" }
+  // Page cache for open-next.config.ts (pages kept in R2; the bucket was
+  // created ahead of the deploy).
+  "r2_buckets": [
+    { "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "dj-kimchi-next-cache" }
   ]
 }
