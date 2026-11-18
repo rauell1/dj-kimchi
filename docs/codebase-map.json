@@ -1,17 +1,19 @@
 {
   "meta": {
-    "version": "b568d98c",
-    "commitHash": "b568d98cffa06dab1497ee3b8d62a051189d2654",
+    "version": "364eb643",
+    "commitHash": "364eb6436ebb2db353c71b37f950b1b1799e13d2",
     "branch": "main",
     "author": "unknown",
-    "timestamp": "2026-11-16T17:34:19.309Z",
+    "timestamp": "2026-11-18T22:56:12.353Z",
     "summary": [
-      "Merge pull request #19 from rauell1/ccr-9438a301-d79y8x"
+      "Rate limit bookings by the real client IP (#22)",
+      "A: public/_headers",
+      "M: src/app/api/booking/route.ts"
     ]
   },
   "stats": {
     "totalFiles": 105,
-    "changedFiles": 3,
+    "changedFiles": 2,
     "coreFiles": 9
   },
   "layers": {
@@ -156,7 +158,7 @@
         },
         "isCore": false,
         "hash": "d8843d1a5a776177",
-        "changed": true
+        "changed": false
       }
     ],
     "apiRoutes": [
@@ -180,8 +182,8 @@
           ]
         },
         "isCore": true,
-        "hash": "e2bc69093d650a39",
-        "changed": false
+        "hash": "8817dde2bd8d7d14",
+        "changed": true
       },
       {
         "path": "src/app/api/health/route.ts",
@@ -2470,19 +2472,19 @@
   },
   "hotspots": [
     {
-      "file": "src/app/layout.tsx",
-      "commitCount": 11
-    },
-    {
       "file": "docs/.map-state.json",
-      "commitCount": 11
+      "commitCount": 12
     },
     {
       "file": "docs/codebase-map.json",
-      "commitCount": 11
+      "commitCount": 12
     },
     {
       "file": "docs/codebase-map.md",
+      "commitCount": 12
+    },
+    {
+      "file": "src/app/layout.tsx",
       "commitCount": 11
     },
     {
@@ -2500,6 +2502,10 @@
     {
       "file": "src/components/site/music.tsx",
       "commitCount": 6
+    },
+    {
+      "file": "wrangler.jsonc",
+      "commitCount": 5
     },
     {
       "file": ".gitignore",
@@ -2522,18 +2528,18 @@
       "commitCount": 4
     },
     {
-      "file": ".github/workflows/deploy-cloudflare.yml",
-      "commitCount": 3
-    },
-    {
-      "file": "wrangler.jsonc",
+      "file": "src/app/api/booking/route.ts",
       "commitCount": 3
     }
   ],
-  "riskFlags": [],
+  "riskFlags": [
+    {
+      "file": "src/app/api/booking/route.ts",
+      "reason": "Core module modified — review carefully"
+    }
+  ],
   "changedFiles": [
-    "eslint.config.mjs",
     "open-next.config.ts",
-    "src/app/layout.tsx"
+    "src/app/api/booking/route.ts"
   ]
 }

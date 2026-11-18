@@ -7,16 +7,18 @@
 
 | Field | Value |
 |-------|-------|
-| Commit | `b568d98c` (`b568d98cffa0`) |
+| Commit | `364eb643` (`364eb6436ebb`) |
 | Branch | `main` |
 | Author | unknown |
-| Generated | 2026-11-16T17:34:19.309Z |
+| Generated | 2026-11-18T22:56:12.353Z |
 | Total source files | 105 |
-| Files changed in last commit | 3 |
+| Files changed in last commit | 2 |
 
 ### Changes Since Last Version
 
-- Merge pull request #19 from rauell1/ccr-9438a301-d79y8x
+- Rate limit bookings by the real client IP (#22)
+- A: public/_headers
+- M: src/app/api/booking/route.ts
 
 ## Architecture Summary
 
@@ -250,21 +252,27 @@ Tracks commit frequency over last 200 commits. High count = higher risk of bugs.
 
 | File | Commits |
 |------|---------|
+| `docs/.map-state.json` | 12 |
+| `docs/codebase-map.json` | 12 |
+| `docs/codebase-map.md` | 12 |
 | `src/app/layout.tsx` | 11 |
-| `docs/.map-state.json` | 11 |
-| `docs/codebase-map.json` | 11 |
-| `docs/codebase-map.md` | 11 |
 | `package.json` | 8 |
 | `package-lock.json` | 7 |
 | `README.md` | 7 |
 | `src/components/site/music.tsx` | 6 |
+| `wrangler.jsonc` | 5 |
 | `.gitignore` | 5 |
 | `CLAUDE.md` | 5 |
 | `src/components/site/navigation.tsx` | 4 |
 | `src/app/sitemap.ts` | 4 |
 | `src/app/page.tsx` | 4 |
-| `.github/workflows/deploy-cloudflare.yml` | 3 |
-| `wrangler.jsonc` | 3 |
+| `src/app/api/booking/route.ts` | 3 |
+
+## ⚠️ Risk Flags
+
+Core files changed in the last commit:
+
+- **`src/app/api/booking/route.ts`** — Core module modified — review carefully
 
 ## Debugging Zones
 

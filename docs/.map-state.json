@@ -5,7 +5,7 @@
     "examples/websocket/server.ts": "50881b769ec938af",
     "keep-alive.mjs": "0a5561453ef1446d",
     "next.config.ts": "769d79cd37299228",
-    "open-next.config.ts": "efe6bddf2422dec5",
+    "open-next.config.ts": "1d1ce0a3f1e5c399",
     "postcss.config.mjs": "141ef24ca27a99d0",
     "prisma/schema.prisma": "7d7f7c0fc33bff4d",
     "scripts/generate-architecture-map.mjs": "8d15688879af68fc",
@@ -16,7 +16,7 @@
     "scripts/install-hooks.mjs": "4466e51b7d411c85",
     "scripts/update-readme-major.mjs": "edeccee4916c68f5",
     "src/app/about/page.tsx": "81a1c0846badc1b4",
-    "src/app/api/booking/route.ts": "e2bc69093d650a39",
+    "src/app/api/booking/route.ts": "8817dde2bd8d7d14",
     "src/app/api/health/route.ts": "348fccc52ccc71dc",
     "src/app/api/mixcloud-url/route.ts": "ca1b67392c10ee93",
     "src/app/api/route.ts": "bb3323e70b608cf9",
@@ -108,5 +108,5 @@
     "src/stores/audio-store.ts": "a98f1f62646dba7f",
     "tailwind.config.ts": "ade682235e52f45b"
   },
-  "lastCommit": "b568d98cffa06dab1497ee3b8d62a051189d2654"
+  "lastCommit": "364eb6436ebb2db353c71b37f950b1b1799e13d2"
 }
