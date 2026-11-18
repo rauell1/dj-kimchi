@@ -156,7 +156,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limiting by IP
     const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("cf-connecting-ip")?.trim() || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       request.headers.get("x-real-ip") ||
       "unknown";
 
