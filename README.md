@@ -165,3 +165,32 @@ This repository includes automation that updates this README when `package.json`
 - Trigger: push to `main` or `master` with `package.json` changes
 
 <!-- deploy: trigger -->
+
+## Project information
+
+| | |
+|---|---|
+| Live site | https://dj-kimchi.rauell.systems |
+| Hosting | Cloudflare Workers |
+| Default branch | `main` |
+| Repository | Public |
+
+### Stack
+
+- Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, shadcn/ui
+- Resend for booking emails
+- Prisma with SQLite for local development only
+
+### Deployment
+
+Production runs on Cloudflare Workers at https://dj-kimchi.rauell.systems. `.github/workflows/deploy-cloudflare.yml` builds and deploys on every push to `main`, using the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets. Public build-time values are repository variables; runtime secrets are Worker secrets.
+
+### Contributing and security
+
+- How to set up, test and submit changes: [CONTRIBUTING.md](CONTRIBUTING.md)
+- How to report a vulnerability: [SECURITY.md](SECURITY.md)
+- Expected behaviour in project spaces: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
+### Licence
+
+No open-source licence has been granted. The code, content and brand assets belong to the project owner and all rights are reserved. Ask the owner before reusing any part of this repository.
