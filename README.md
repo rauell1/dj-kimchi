@@ -1,4 +1,20 @@
-# DJ Kimchi Website
+<!-- header:start -->
+<div align="center">
+
+# DJ Kimchi
+
+**Official website of DJ Kimchi, a Nairobi DJ playing Afrobeats, Amapiano, Gengetone and Dancehall: mixes, videos, photos and bookings.**
+
+[![Live: dj-kimchi.rauell.systems](https://img.shields.io/badge/Live-dj--kimchi.rauell.systems-0d9488?style=for-the-badge&logo=cloudflare&logoColor=white)](https://dj-kimchi.rauell.systems) ![Status: live](https://img.shields.io/badge/Status-Live-2ea44f?style=for-the-badge) ![Public repository](https://img.shields.io/badge/Repo-Public-555555?style=for-the-badge&logo=github)
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white) ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-f38020?style=flat-square&logo=cloudflare&logoColor=white)
+
+[Live site](https://dj-kimchi.rauell.systems) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Code of conduct](CODE_OF_CONDUCT.md)
+
+</div>
+
+---
+<!-- header:end -->
 
 Official website for DJ Kimchi, focused on bookings, media showcases, and social presence.
 
