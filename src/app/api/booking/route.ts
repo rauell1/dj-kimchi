@@ -1,3 +1,4 @@
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { NextRequest, NextResponse } from "next/server";
 import type { Booking } from "@prisma/client";
 import { db, isDatabaseEnabled } from "@/lib/db";
@@ -160,7 +161,17 @@ export async function POST(request: NextRequest) {
       request.headers.get("x-real-ip") ||
       "unknown";
 
-    if (rateLimit(`booking:${ip}`, 5, 60_000)) {
+    // Shared limit across every Worker copy (Cloudflare rate limiting binding in
+    // wrangler.jsonc); the in-memory limit only applies where the binding is
+    // missing, such as local development.
+    let limiter: { limit(o: { key: string }): Promise<{ success: boolean }> } | undefined;
+    try {
+      limiter = (getCloudflareContext().env as { BOOKING_RATE_LIMITER?: typeof limiter }).BOOKING_RATE_LIMITER;
+    } catch {
+      limiter = undefined;
+    }
+    const limited = limiter ? !(await limiter.limit({ key: `booking:${ip}` })).success : rateLimit(`booking:${ip}`, 5, 60_000);
+    if (limited) {
       return NextResponse.json(
         { success: false, error: "Too many booking attempts. Please try again in a minute." },
         { status: 429 }

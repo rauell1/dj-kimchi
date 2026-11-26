@@ -11,7 +11,13 @@
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
   // Runtime secrets are set with `npx wrangler secret put NAME` or in the Cloudflare dashboard.
   "keep_vars": true,
-  "workers_dev": true,
+  // Only dj-kimchi.rauell.systems serves the site: a workers.dev address would
+  // skip the zone firewall rules.
+  "workers_dev": false,
+  // Booking form: 5 requests per minute per visitor, shared by every Worker copy.
+  "ratelimits": [
+    { "name": "BOOKING_RATE_LIMITER", "namespace_id": "2001", "simple": { "limit": 5, "period": 60 } }
+  ],
   "routes": [{ "pattern": "dj-kimchi.rauell.systems", "custom_domain": true }],
   "observability": { "enabled": true },
   // Page cache for open-next.config.ts (pages kept in R2; the bucket was

@@ -35,6 +35,30 @@ const nextConfig: NextConfig = {
             key: "X-Powered-By",
             value: "",
           },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            // Allows the music and video embeds (YouTube, Mixcloud, HearThis) and
+            // their audio, while blocking plugins, <base> rewriting, foreign form
+            // targets and framing of this site.
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: blob: https:",
+              "media-src 'self' blob: https:",
+              "font-src 'self' data: https:",
+              "frame-src https:",
+              "connect-src 'self' https:",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "frame-ancestors 'none'",
+            ].join("; "),
+          },
         ],
       },
     ];
